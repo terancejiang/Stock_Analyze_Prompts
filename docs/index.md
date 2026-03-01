@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# Stock Analyze Prompts
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+股票分析 AI Prompt 集合
 
-## Commands
+## 烟蒂股分析 (Cigbutt)
+烟蒂股（Cigar Butt）投资分析框架 Prompt，用于量化筛选和分析低估值股票。
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## 龟龟投资策略 (Turtle Framework)
+龟龟投资策略 AI Prompt，系统化的投资分析框架。
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Reports
+基于以上 Prompt 生成的个股分析报告。

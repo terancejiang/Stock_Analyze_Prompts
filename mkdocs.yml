@@ -1,1 +1,38 @@
-site_name: My Docs
+site_name: Stock Analyze Prompts
+site_url: https://terancejiang.github.io/Stock_Analyze_Prompts/
+repo_url: https://github.com/terancejiang/Stock_Analyze_Prompts
+
+nav:
+  - Home: index.md
+  - 烟蒂股分析 (Cigbutt):
+      - cigbutt/烟蒂股分析Prompt_v1.7.md
+      - cigbutt/烟蒂股分析Prompt_v1.6.md
+      - cigbutt/烟蒂股分析Prompt_v1.5.md
+      - cigbutt/烟蒂股分析Prompt_v1.4.md
+      - cigbutt/烟蒂股分析Prompt_v1.3.md
+  - 龟龟投资策略 (Turtle):
+      - turtle_framework/龟龟投资策略_AI_Prompt_v0.9.md
+      - turtle_framework/龟龟投资策略_AI_Prompt_v0.8.md
+      - turtle_framework/龟龟投资策略_AI_Prompt_v0.7.md
+      - turtle_framework/龟龟投资策略_AI_Prompt_v0.6.md
+      - turtle_framework/龟龟投资策略_AI_Prompt_v0.5.md
+      - turtle_framework/龟龟投资策略_AI_Prompt_v0.4.md
+  - Reports:
+      - reports/宝胜国际_v1.6分析报告_20260225.md
+      - reports/上海实业控股烟蒂股分析报告.md
+      - reports/中国淀粉控股_烟蒂股量化分析报告.md
+      - reports/215HK_和记电讯香港烟蒂股分析报告.md
+      - reports/363HK_烟蒂股分析报告.md
+      - reports/金融街物业_烟蒂股分析报告.md
+      - reports/2219HK_朝聚眼科烟蒂股分析报告.md
+      - reports/香港中旅308HK_烟蒂股分析报告.md
+      - reports/朝云集团烟蒂股分析报告_最新版.md
+      - reports/香港小轮_50HK_烟蒂股分析报告_v1.4.md
+      - reports/普华和顺_烟蒂股分析报告.md
+      - reports/港通控股(00032)烟蒂股分析报告.md
+      - reports/中视金桥烟蒂股分析报告.md
+      - reports/天津发展(00882.HK)烟蒂股精确量化分析报告.md
+      - reports/李氏大药房_烟蒂股分析报告.md
+      - reports/2660HK_禅游科技烟蒂股分析报告.md
+      - reports/中教控股(00839.HK)烟蒂股精确量化分析报告.md
+      - reports/京投交通科技_烟蒂股分析报告_v1.3.md
