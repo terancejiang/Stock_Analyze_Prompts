@@ -2,6 +2,12 @@ site_name: Stock Analyze Prompts
 site_url: https://terancejiang.github.io/Stock_Analyze_Prompts/
 repo_url: https://github.com/terancejiang/Stock_Analyze_Prompts
 
+theme:
+  name: material
+
+markdown_extensions:
+  - tables
+
 nav:
   - Home: index.md
   - 烟蒂股分析 (Cigbutt):
@@ -26,26 +32,28 @@ nav:
   - Reports:
       - Overview: reports/index.md
       - 烟蒂股分析报告:
-          - reports/cigbutt_reports/宝胜国际_v1.6分析报告_20260225.md
-          - reports/cigbutt_reports/上海实业控股烟蒂股分析报告.md
-          - reports/cigbutt_reports/中国淀粉控股_烟蒂股量化分析报告.md
-          - reports/cigbutt_reports/215HK_和记电讯香港烟蒂股分析报告.md
-          - reports/cigbutt_reports/363HK_烟蒂股分析报告.md
-          - reports/cigbutt_reports/金融街物业_烟蒂股分析报告.md
-          - reports/cigbutt_reports/2219HK_朝聚眼科烟蒂股分析报告.md
-          - reports/cigbutt_reports/香港中旅308HK_烟蒂股分析报告.md
-          - reports/cigbutt_reports/朝云集团烟蒂股分析报告_最新版.md
-          - reports/cigbutt_reports/香港小轮_50HK_烟蒂股分析报告_v1.4.md
-          - reports/cigbutt_reports/普华和顺_烟蒂股分析报告.md
-          - reports/cigbutt_reports/港通控股(00032)烟蒂股分析报告.md
-          - reports/cigbutt_reports/中视金桥烟蒂股分析报告.md
-          - reports/cigbutt_reports/天津发展(00882.HK)烟蒂股精确量化分析报告.md
-          - reports/cigbutt_reports/李氏大药房_烟蒂股分析报告.md
-          - reports/cigbutt_reports/2660HK_禅游科技烟蒂股分析报告.md
-          - reports/cigbutt_reports/中教控股(00839.HK)烟蒂股精确量化分析报告.md
           - reports/cigbutt_reports/京投交通科技_烟蒂股分析报告_v1.3.md
           - reports/cigbutt_reports/金融街物业_烟蒂股分析报告_v1.7.md
+          - reports/cigbutt_reports/金融街物业_烟蒂股分析报告_v1.0.md
+          - reports/cigbutt_reports/宝胜国际_烟蒂股分析报告_v1.6.md
+          - reports/cigbutt_reports/香港小轮_烟蒂股分析报告_v1.4.md
+          - reports/cigbutt_reports/上海实业控股_烟蒂股分析报告_v1.1.md
+          - reports/cigbutt_reports/上海实业控股_烟蒂股分析报告_v1.0.md
+          - reports/cigbutt_reports/中国淀粉控股_烟蒂股分析报告.md
+          - reports/cigbutt_reports/和记电讯香港_烟蒂股分析报告.md
+          - reports/cigbutt_reports/朝聚眼科_烟蒂股分析报告.md
+          - reports/cigbutt_reports/香港中旅_烟蒂股分析报告.md
+          - reports/cigbutt_reports/朝云集团_烟蒂股分析报告.md
+          - reports/cigbutt_reports/普华和顺_烟蒂股分析报告.md
+          - reports/cigbutt_reports/港通控股_烟蒂股分析报告.md
+          - reports/cigbutt_reports/中视金桥_烟蒂股分析报告.md
+          - reports/cigbutt_reports/天津发展_烟蒂股分析报告.md
+          - reports/cigbutt_reports/李氏大药房_烟蒂股分析报告.md
+          - reports/cigbutt_reports/禅游科技_烟蒂股分析报告.md
+          - reports/cigbutt_reports/中教控股_烟蒂股分析报告.md
       - 龟龟投资策略报告:
+          - reports/turtle_reports/蒙牛乳业_龟龟投资策略分析报告_v0.13_H12025更新.md
+          - reports/turtle_reports/分众传媒_龟龟投资策略分析报告.md
           - reports/turtle_reports/DUOL_龟龟投资策略分析报告.md
           - reports/turtle_reports/TCOM_龟龟投资策略分析报告.md
           - reports/turtle_reports/古井贡_龟龟投资策略分析报告.md
