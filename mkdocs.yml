@@ -65,6 +65,11 @@ nav:
           - reports/cigbutt_reports/禅游科技_烟蒂股分析报告.md
           - reports/cigbutt_reports/中教控股_烟蒂股分析报告.md
       - 龟龟投资策略报告:
+          - 福寿园:
+              - reports/turtle_reports/01448_福寿园/福寿园_01448_分析报告.md
+              - reports/turtle_reports/01448_福寿园/data_pack_market.md
+              - reports/turtle_reports/01448_福寿园/data_pack_report.md
+              - reports/turtle_reports/01448_福寿园/data_pack_report_interim.md
           - 格力电器:
               - reports/turtle_reports/000651_格力电器/格力电器_000651_分析报告.md
               - reports/turtle_reports/000651_格力电器/data_pack_market.md
