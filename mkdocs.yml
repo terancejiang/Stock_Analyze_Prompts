@@ -65,6 +65,27 @@ nav:
           - reports/cigbutt_reports/禅游科技_烟蒂股分析报告.md
           - reports/cigbutt_reports/中教控股_烟蒂股分析报告.md
       - 龟龟投资策略报告:
+          - 格力电器:
+              - reports/turtle_reports/000651_格力电器/格力电器_000651_分析报告.md
+              - reports/turtle_reports/000651_格力电器/data_pack_market.md
+              - reports/turtle_reports/000651_格力电器/data_pack_report.md
+          - 五粮液:
+              - reports/turtle_reports/000858_五粮液/五粮液_000858_分析报告.md
+              - reports/turtle_reports/000858_五粮液/data_pack_market.md
+          - 中国食品:
+              - reports/turtle_reports/00506_中国食品/中国食品_00506_分析报告.md
+              - reports/turtle_reports/00506_中国食品/data_pack_market.md
+              - reports/turtle_reports/00506_中国食品/data_pack_report.md
+              - reports/turtle_reports/00506_中国食品/data_pack_report_interim.md
+          - 重庆百货:
+              - reports/turtle_reports/600729_重庆百货/重庆百货_600729_分析报告.md
+              - reports/turtle_reports/600729_重庆百货/data_pack_market.md
+              - reports/turtle_reports/600729_重庆百货/data_pack_report.md
+              - reports/turtle_reports/600729_重庆百货/data_pack_report_interim.md
+          - 伊利股份:
+              - reports/turtle_reports/600887_伊利股份/伊利股份_600887_分析报告.md
+              - reports/turtle_reports/600887_伊利股份/data_pack_market.md
+              - reports/turtle_reports/600887_伊利股份/data_pack_report.md
           - 保利物业:
               - reports/turtle_reports/保利物业06049/保利物业_06049_分析报告.md
               - reports/turtle_reports/保利物业06049/data_pack_market.md
