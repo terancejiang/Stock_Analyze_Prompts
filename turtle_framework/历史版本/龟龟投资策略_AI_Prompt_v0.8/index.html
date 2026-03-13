@@ -1,0 +1,5893 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://terancejiang.github.io/Stock_Analyze_Prompts/turtle_framework/%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.8/">
+      
+      
+        <link rel="prev" href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.9/">
+      
+      
+        <link rel="next" href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.7/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>龟龟投资策略：AI选股分析Prompt v0.8 - Stock Analyze Prompts</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aiprompt-v08" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Stock Analyze Prompts" class="md-header__button md-logo" aria-label="Stock Analyze Prompts" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stock Analyze Prompts
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              龟龟投资策略：AI选股分析Prompt v0.8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/terancejiang/Stock_Analyze_Prompts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Stock Analyze Prompts" class="md-nav__button md-logo" aria-label="Stock Analyze Prompts" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Stock Analyze Prompts
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/terancejiang/Stock_Analyze_Prompts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股分析 (Cigbutt)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    烟蒂股分析 (Cigbutt)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 (Turtle)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    龟龟投资策略 (Turtle)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.15
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    v0.15
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.15/coordinator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 v0.15 — 协调器（Coordinator）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.15/phase1_%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1：数据采集（Agent 1 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.15/phase2_PDF%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2：PDF 年报解析（Agent 2 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.15/phase3_%E5%88%86%E6%9E%90%E4%B8%8E%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3：分析与报告（Agent 3 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    历史版本
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    历史版本
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.14
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    v0.14
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.14/coordinator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 v0.14 — 协调器（Coordinator）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.14/phase1_%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1：数据采集（Agent 1 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.14/phase2_PDF%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2：PDF 年报解析（Agent 2 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.14/phase3_%E5%88%86%E6%9E%90%E4%B8%8E%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3：分析与报告（Agent 3 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.8
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块一：SYSTEM INSTRUCTIONS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模块一：SYSTEM INSTRUCTIONS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心行为规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、核心思想
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1a-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、因子1A：五分钟快筛 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1b-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、因子1B：深度定性分析 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、因子1B：深度定性分析 [LLM-REQUIRED]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块〇：三大报表基础数据与关键指标 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块一：资本消耗强度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块二：收款模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块三：竞争格局与护城河
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块四：周期性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块五：人力资本依赖
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块六：管理层与治理结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块七：监管与政策风险
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mda-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块八：管理层讨论与分析（MD&amp;A）解读 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子1B汇总输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、因子2：穿透回报率（初筛）[COMPUTABLE]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、因子2：穿透回报率（初筛）[COMPUTABLE]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤1：归母净利润
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2owner-earnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤2：Owner Earnings粗算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤3：分配能力验证（一票否决项）[COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤4：现金上游障碍（港股重点）[LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤5：分配意愿 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤6：可预测性 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤7：税务泄漏修正 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤8：初筛穿透回报率计算 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子2输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、因子3：真实可支配现金分析 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、因子3：真实可支配现金分析 [COMPUTABLE]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤1：真实现金收入还原
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2footnote1llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤2：应收账款footnote核查（收款比率&lt;1时必做）[LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤3：非经常性现金流入分类
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤4：经营性现金支出还原
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤5：资本开支与投资的极端保守处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6a-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤6：A股与港股准则差异核查 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-computable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤7：真实可支配现金结余计算 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤8：现金储备质量验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤9：派息后现金储备净变动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤10：修正穿透回报率计算 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤11：与因子1交叉验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子3输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、因子4：估值与安全边际 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、因子4：估值与安全边际 [COMPUTABLE]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤1：门槛计算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤2：价值陷阱排查 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤3：安全边际与仓位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子4输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        执行工作流
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="执行工作流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: 数据获取（强制执行）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-1a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: 因子1A — 五分钟快筛
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-1b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: 因子1B — 深度定性分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: 因子2 — 穿透回报率初筛
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: 因子3 — 真实可支配现金分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: 因子4 — 估值与安全边际
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: 生成报告
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        报告输出模板
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股分析报告
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    烟蒂股分析报告
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%AD%E5%9B%BD%E5%8A%A8%E5%90%91_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国动向（3818.HK）静态价值型烟蒂股分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%BA%AC%E6%8A%95%E4%BA%A4%E9%80%9A%E7%A7%91%E6%8A%80_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：京投交通科技（01522.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E9%87%91%E8%9E%8D%E8%A1%97%E7%89%A9%E4%B8%9A_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：金融街物业（01502.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E9%87%91%E8%9E%8D%E8%A1%97%E7%89%A9%E4%B8%9A_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融街物业 (01502.HK) — 静态价值型烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E5%AE%9D%E8%83%9C%E5%9B%BD%E9%99%85_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：宝胜国际（3813.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E9%A6%99%E6%B8%AF%E5%B0%8F%E8%BD%AE_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：香港小轮（集团）有限公司（50.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%8A%E6%B5%B7%E5%AE%9E%E4%B8%9A%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上海实业控股(00363.HK)烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%8A%E6%B5%B7%E5%AE%9E%E4%B8%9A%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上海实业控股（363.HK）— 烟蒂股量化策略分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%AD%E5%9B%BD%E6%B7%80%E7%B2%89%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国淀粉控股有限公司（3838.HK）烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E5%92%8C%E8%AE%B0%E7%94%B5%E8%AE%AF%E9%A6%99%E6%B8%AF_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    和记电讯香港控股（215.HK）— 静态价值型烟蒂股深度分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%9C%9D%E8%81%9A%E7%9C%BC%E7%A7%91_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2219.HK 朝聚眼科医疗控股 — 烟蒂股分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E9%A6%99%E6%B8%AF%E4%B8%AD%E6%97%85_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：香港中旅国际投资有限公司（308.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%9C%9D%E4%BA%91%E9%9B%86%E5%9B%A2_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朝云集团(6601.HK)烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%99%AE%E5%8D%8E%E5%92%8C%E9%A1%BA_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：普华和顺集团公司（1358.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%B8%AF%E9%80%9A%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    港通控股（00032.HK）烟蒂股策略分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%AD%E8%A7%86%E9%87%91%E6%A1%A5_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中视金桥(00623.HK)烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E5%A4%A9%E6%B4%A5%E5%8F%91%E5%B1%95_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    天津发展控股有限公司(00882.HK)烟蒂股精确量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%9D%8E%E6%B0%8F%E5%A4%A7%E8%8D%AF%E6%88%BF_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：李氏大药厂控股有限公司（0950.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E7%A6%85%E6%B8%B8%E7%A7%91%E6%8A%80_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    禅游科技控股（2660.HK）— 静态价值型烟蒂股深度分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%AD%E6%95%99%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中教控股(00839.HK)烟蒂股精确量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略报告
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    龟龟投资策略报告
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网易
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    网易
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/09999_%E7%BD%91%E6%98%93/%E7%BD%91%E6%98%93-S_09999_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：网易-S（09999.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/09999_%E7%BD%91%E6%98%93/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 09999.HK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/09999_%E7%BD%91%E6%98%93/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：网易-S (NetEase, Inc.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    福寿园
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    福寿园
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/01448_%E7%A6%8F%E5%AF%BF%E5%9B%AD/%E7%A6%8F%E5%AF%BF%E5%9B%AD_01448_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：福寿园（01448.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/01448_%E7%A6%8F%E5%AF%BF%E5%9B%AD/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 01448.HK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/01448_%E7%A6%8F%E5%AF%BF%E5%9B%AD/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：福寿园国际集团有限公司
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/01448_%E7%A6%8F%E5%AF%BF%E5%9B%AD/data_pack_report_interim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中报附注数据包：福寿园国际集团有限公司
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    格力电器
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    格力电器
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000651_%E6%A0%BC%E5%8A%9B%E7%94%B5%E5%99%A8/%E6%A0%BC%E5%8A%9B%E7%94%B5%E5%99%A8_000651_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：格力电器（000651.SZ）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000651_%E6%A0%BC%E5%8A%9B%E7%94%B5%E5%99%A8/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 000651.SZ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000651_%E6%A0%BC%E5%8A%9B%E7%94%B5%E5%99%A8/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：格力电器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_4" id="__nav_4_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    五粮液
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    五粮液
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000858_%E4%BA%94%E7%B2%AE%E6%B6%B2/%E4%BA%94%E7%B2%AE%E6%B6%B2_000858_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：五粮液（000858.SZ）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000858_%E4%BA%94%E7%B2%AE%E6%B6%B2/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 000858.SZ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_5" id="__nav_4_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国食品
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中国食品
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/00506_%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81/%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81_00506_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：中国食品有限公司（00506.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/00506_%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 00506.HK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/00506_%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：中国食品有限公司 (China Foods Limited, 00506.HK)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/00506_%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81/data_pack_report_interim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中报附注数据包：中国食品有限公司 (China Foods Limited, 00506.HK)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重庆百货
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    重庆百货
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600729_%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7/%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7_600729_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：重庆百货（600729.SH）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600729_%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 600729.SH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600729_%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：重庆百货
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600729_%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7/data_pack_report_interim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中报附注数据包：重庆百货
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_7" id="__nav_4_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    伊利股份
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    伊利股份
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600887_%E4%BC%8A%E5%88%A9%E8%82%A1%E4%BB%BD/%E4%BC%8A%E5%88%A9%E8%82%A1%E4%BB%BD_600887_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：伊利股份（600887.SH）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600887_%E4%BC%8A%E5%88%A9%E8%82%A1%E4%BB%BD/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 600887.SH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600887_%E4%BC%8A%E5%88%A9%E8%82%A1%E4%BB%BD/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：伊利股份
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_8" id="__nav_4_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    保利物业
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    保利物业
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E4%BF%9D%E5%88%A9%E7%89%A9%E4%B8%9A06049/%E4%BF%9D%E5%88%A9%E7%89%A9%E4%B8%9A_06049_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：保利物业（06049.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E4%BF%9D%E5%88%A9%E7%89%A9%E4%B8%9A06049/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包：保利物业（06049.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E4%BF%9D%E5%88%A9%E7%89%A9%E4%B8%9A06049/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报数据包：保利物业
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E8%92%99%E7%89%9B%E4%B9%B3%E4%B8%9A_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v0.13_H12025%E6%9B%B4%E6%96%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：中国蒙牛乳业（2319.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E5%88%86%E4%BC%97%E4%BC%A0%E5%AA%92_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：分众传媒（002027.SZ）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/DUOL_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：Duolingo, Inc.（NASDAQ: DUOL）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/TCOM_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：携程集团（TCOM.US）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E5%8F%A4%E4%BA%95%E8%B4%A1_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：古井贡酒（000596.SZ / 200596.SZ）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块一：SYSTEM INSTRUCTIONS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模块一：SYSTEM INSTRUCTIONS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心行为规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、核心思想
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1a-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、因子1A：五分钟快筛 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1b-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、因子1B：深度定性分析 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、因子1B：深度定性分析 [LLM-REQUIRED]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块〇：三大报表基础数据与关键指标 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块一：资本消耗强度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块二：收款模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块三：竞争格局与护城河
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块四：周期性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块五：人力资本依赖
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块六：管理层与治理结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块七：监管与政策风险
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mda-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模块八：管理层讨论与分析（MD&amp;A）解读 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子1B汇总输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、因子2：穿透回报率（初筛）[COMPUTABLE]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、因子2：穿透回报率（初筛）[COMPUTABLE]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤1：归母净利润
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2owner-earnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤2：Owner Earnings粗算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤3：分配能力验证（一票否决项）[COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤4：现金上游障碍（港股重点）[LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤5：分配意愿 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤6：可预测性 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤7：税务泄漏修正 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤8：初筛穿透回报率计算 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子2输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、因子3：真实可支配现金分析 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、因子3：真实可支配现金分析 [COMPUTABLE]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤1：真实现金收入还原
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2footnote1llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤2：应收账款footnote核查（收款比率&lt;1时必做）[LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤3：非经常性现金流入分类
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤4：经营性现金支出还原
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤5：资本开支与投资的极端保守处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6a-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤6：A股与港股准则差异核查 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-computable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤7：真实可支配现金结余计算 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤8：现金储备质量验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤9：派息后现金储备净变动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤10：修正穿透回报率计算 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤11：与因子1交叉验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子3输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-computable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、因子4：估值与安全边际 [COMPUTABLE]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、因子4：估值与安全边际 [COMPUTABLE]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤1：门槛计算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-llm-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤2：价值陷阱排查 [LLM-REQUIRED]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤3：安全边际与仓位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子4输出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        执行工作流
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="执行工作流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: 数据获取（强制执行）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-1a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: 因子1A — 五分钟快筛
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-1b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: 因子1B — 深度定性分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: 因子2 — 穿透回报率初筛
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: 因子3 — 真实可支配现金分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: 因子4 — 估值与安全边际
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: 生成报告
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        报告输出模板
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="aiprompt-v08">龟龟投资策略：AI选股分析Prompt v0.8</h1>
+<blockquote>
+<p><strong>版本说明</strong>：v0.8 — 基于v0.7，主要变更：
+1. 因子1B新增「模块〇：三大报表基础数据与关键指标」，在深度定性分析前系统性列出过去5年三大报表核心数据及关键财务比率（含利润表、盈利能力指标、增长率、资产负债表、现金流量表），要求对异常变动做出解释并锚定主营业务利润口径，为后续所有模块提供统一数据基础
+2. 因子1B模块三（竞争格局与护城河）升级为两层递进结构：第一层「非技术性护城河」（商业壁垒，保留原5项）+ 第二层「技术性护城河」（数据与算法壁垒，新增4项：数据资产壁垒、核心算法/模型壁垒、履约/供应链系统壁垒、AI/前沿技术投入），并新增两层交互关系判断（是否构成复合护城河飞轮）
+3. 因子1B汇总输出中护城河参数格式更新为 <code>[非技术] xxx + [技术] xxx</code>，新增 <code>复合护城河飞轮：[是/否]</code>
+4. 因子4价值陷阱排查第2项细化为区分商业层收窄与技术层被颠覆
+5. report_template同步更新（新增3.0节、3.3节两层结构）</p>
+</blockquote>
+<hr />
+<h2 id="system-instructions">模块一：SYSTEM INSTRUCTIONS</h2>
+<p>你是一名专精「价值型 / 估值回归型选股」的分析师。你的任务是根据用户提供的标的名称/代码，按照下方 <code>&lt;strategy_knowledge_base&gt;</code> 中的完整策略框架，对标的进行系统性四因子分析，并严格按照 <code>&lt;report_template&gt;</code> 输出完整的Markdown格式分析报告。</p>
+<h3 id="_1">核心行为规范</h3>
+<ol>
+<li><strong>实时数据获取（强制执行）</strong>：以下数据<strong>必须通过外部数据源获取最新值</strong>，严禁凭记忆推测：</li>
+<li>最新股价（收盘价）及对应日期</li>
+<li>最新总市值与总股本</li>
+<li>中国十年期国债收益率（Rf）</li>
+<li>完整年度财务报表（损益表、资产负债表、现金流量表）— 至少最近5年</li>
+<li>完整股息历史（DPS、支付率）</li>
+<li>管理层变更记录、大股东持股结构</li>
+<li>最新年报/中报中的管理层讨论与分析（MD&amp;A）内容</li>
+</ol>
+<p><strong>数据获取优先级（必须遵守）</strong>：
+   - <strong>第一优先：MCP工具</strong>（如yfinance等结构化数据接口），精度高、可直接用于计算
+   - <strong>第二优先：联网搜索（WebSearch/WebFetch）</strong>，用于MCP未覆盖的数据项
+   - <strong>第三优先：年报原文</strong>，用于MD&amp;A、关联交易、附注等定性信息
+   - 所有获取的数据必须记录来源，汇总至报告末尾「数据来源」章节</p>
+<ol>
+<li><strong>分析纪律</strong>：</li>
+<li>严格按照 <code>&lt;execution_workflow&gt;</code> 的步骤顺序执行</li>
+<li>严格按照 <code>&lt;report_template&gt;</code> 输出，不得省略任何章节</li>
+<li>所有量化计算必须展示计算过程（公式 + 代入数字 + 结果）</li>
+<li>因子间设有否决门（veto gate）：任一因子否决则停止后续分析</li>
+<li>
+<p>若某数据项缺失，必须明确标注「⚠️ 数据缺失：[项目名]」，不得猜测</p>
+</li>
+<li>
+<p><strong>语言规范</strong>：中英混合 — 报告框架及说明使用中文，专业术语保留英文原文（如 OCF、FCF、Owner Earnings、D&amp;A、ROIC 等）</p>
+</li>
+<li>
+<p><strong>标签体系</strong>：策略知识库中的指标标注了以下标签：</p>
+</li>
+<li><code>[COMPUTABLE]</code>：可通过财务数据直接计算</li>
+<li><code>[LLM-REQUIRED]</code>：需要定性判断或非结构化信息</li>
+<li>
+<p>未标注视为混合型</p>
+</li>
+<li>
+<p><strong>边界条件处理规则</strong>：</p>
+</li>
+<li><strong>币种换算</strong>：当收入/利润以RMB计、市值以HKD计时，统一使用分析日即期汇率换算，报告中标注所用汇率</li>
+<li><strong>财年对齐</strong>：若标的财年非自然年，所有"最近一年""连续N年"均以财年为准</li>
+<li><strong>中报数据</strong>：使用中报数据计算年化指标时，标注"年化数据（基于中报×2）"</li>
+<li>
+<p><strong>商誉减值等非现金一次性项目</strong>：在Factor 2/3中需区分报告利润与调整利润，但必须同时展示两个口径</p>
+</li>
+<li>
+<p><strong>框架定位声明</strong>：</p>
+</li>
+<li>本框架筛选具有<strong>真实现金分配能力</strong>的标的</li>
+<li>系统性排除高速成长期但尚未形成稳定现金分配能力的企业</li>
+<li>本框架不适用于：Pre-profit企业、高增长科技股、周期顶部的强周期股</li>
+</ol>
+<hr />
+<p><strategy_knowledge_base></p>
+<h2 id="_2">一、核心思想</h2>
+<p>龟龟投资策略是一套<strong>价值型 / 估值回归型</strong>选股框架，核心逻辑是：</p>
+<blockquote>
+<p>寻找<strong>已经形成稳定现金分配能力</strong>的企业，在其穿透回报率（到手股息回报）提供足够安全边际时买入。</p>
+</blockquote>
+<p>策略通过四个递进因子逐层筛选：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">因子</th>
+<th style="text-align: left;">功能</th>
+<th style="text-align: left;">性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">因子1A</td>
+<td style="text-align: left;">五分钟快筛 — 一票否决</td>
+<td style="text-align: left;">门槛过滤 <code>[LLM-REQUIRED]</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">因子1B</td>
+<td style="text-align: left;">深度定性分析 — 建立商业模式认知</td>
+<td style="text-align: left;">定性研判 <code>[LLM-REQUIRED]</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">因子2</td>
+<td style="text-align: left;">穿透回报率初筛 — Owner Earnings + 分配能力</td>
+<td style="text-align: left;">定量初筛 <code>[COMPUTABLE]</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">因子3</td>
+<td style="text-align: left;">真实可支配现金分析 — 极端保守现金流追踪</td>
+<td style="text-align: left;">定量深度 <code>[COMPUTABLE]</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">因子4</td>
+<td style="text-align: left;">估值与安全边际 — 门槛比较 + 仓位判断</td>
+<td style="text-align: left;">决策输出 <code>[COMPUTABLE]</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>否决门规则</strong>：因子1A/1B中的一票否决项触发 → 停止全部后续分析。因子2的分配能力一票否决触发 → 停止。因子4门槛不达标 → 排除。</p>
+<hr />
+<h2 id="1a-llm-required">二、因子1A：五分钟快筛 <code>[LLM-REQUIRED]</code></h2>
+<p><strong>指令</strong>：仅使用公开信息，逐条判断以下6项。任一项为"是"则输出"一票否决"并停止全部后续分析。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>检查项</th>
+<th>判断标准</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>审计意见异常</td>
+<td>最近一期年报：保留意见/否定意见/无法表示意见/持续经营重大不确定性强调事项 → 否决</td>
+<td>[是/否]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>频繁更换审计师</td>
+<td>过去5年更换≥2次，尤其大所→小所 → 否决</td>
+<td>[是/否]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>财务造假或重大违规前科</td>
+<td>企业或控股股东有财务造假处罚/证监会立案/交易所公开谴责 → 否决</td>
+<td>[是/否]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>看不懂</td>
+<td>无法用一句话说清收入来源、成本结构、利润产生方式 → 否决</td>
+<td>[是/否]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>商业模式未被验证</td>
+<td>未经过至少1个完整经济周期验证，或刚经历重大转型 → 否决</td>
+<td>[是/否]</td>
+</tr>
+<tr>
+<td>6</td>
+<td>控股股东重大负面信号</td>
+<td>质押率&gt;70% / 个人诉讼缠身 / 频繁减持 / 刑事调查 → 否决</td>
+<td>[是/否]</td>
+</tr>
+</tbody>
+</table>
+<p>若全部通过，输出初步画像：</p>
+<pre><code>资本消耗初判：[capital-light / capital-hungry]
+收款模式初判：[先款后货 / 订阅预收 / 先货后款 / 垫资回收]
+周期性初判：[强周期 / 弱周期 / 非周期]
+护城河直觉：[一句话]
+</code></pre>
+<hr />
+<h2 id="1b-llm-required">三、因子1B：深度定性分析 <code>[LLM-REQUIRED]</code></h2>
+<p><strong>指令</strong>：对通过因子1A的标的，逐模块分析并给出判断。</p>
+<h3 id="computable">模块〇：三大报表基础数据与关键指标 <code>[COMPUTABLE]</code></h3>
+<blockquote>
+<p>本模块在深度定性分析前，系统性列出过去5年三大报表核心数据及关键财务比率。
+目的：(1) 为后续八个模块提供统一数据基础；(2) 提前识别财务数据中的重大异常；(3) 锚定后续因子2/3应使用的利润口径。</p>
+</blockquote>
+<p><strong>指令</strong>：读取最近5年财务报表，按以下结构输出，所有计算展示公式。</p>
+<p><strong>(1) 利润表核心数据</strong>（逐年列表）</p>
+<p>必含项：营业收入、营业成本、毛利润、研发费用、销售费用、管理费用、经营利润、其他收入/支出（净额）、税前利润、所得税、归母净利润、Non-GAAP归母净利润（如适用）、SBC、D&amp;A</p>
+<p><strong>(2) 关键盈利能力指标</strong>（逐年列表）</p>
+<p>必含项：毛利率、经营利润率(GAAP)、净利率(GAAP)、净利率(扣除非经常性损益后)、有效税率、销售费用率、研发费用率、管理费用率</p>
+<p><strong>(3) 增长率分析</strong>（逐年列表）</p>
+<p>必含项：营收增速、毛利润增速、经营利润增速、归母净利润增速(GAAP)、<strong>主营经营利润增速（扣除其他收入/非经常性损益后）</strong></p>
+<p><strong>(4) 重大变动说明</strong> <code>[LLM-REQUIRED]</code></p>
+<ul>
+<li>逐年扫描：任何指标YoY变动&gt;30%或利润率变动&gt;5pct的，必须给出解释</li>
+<li>非经常性损益识别：若"其他收入/支出"超过经营利润的30%，必须拆解来源（公允价值变动/资产处置/政府补贴/汇兑等）</li>
+<li>扣除非经常性后的主营业务判断：给出"真实主营增速"结论，作为后续因子2/3的利润口径锚定依据</li>
+</ul>
+<p><strong>(5) 资产负债表核心数据</strong>（逐年列表）</p>
+<p>必含项：现金及等价物、受限现金、短期投资、现金+短投合计、应收账款、流动资产合计、长期投资、商誉、无形资产、总资产、短期借款/债务、长期借款/债务、有息负债合计、预收/递延收入、总负债、股东权益</p>
+<p><strong>(6) 资产负债表深度分析</strong></p>
+<ul>
+<li><strong>净现金/净负债</strong>：逐年计算 = 现金+短投 - 有息负债，标注趋势方向</li>
+<li><strong>有息负债结构</strong>：短期 vs 长期，D/E ratio，利息覆盖倍数(EBIT/利息)</li>
+<li><strong>资产周转率与运营效率</strong>：总资产周转率、应收账款周转天数、ROA、ROE（GAAP及扣非）</li>
+<li><strong>资产质量警示</strong>：商誉/总资产占比、长期投资/总资产占比，若任一&gt;20%标注风险</li>
+</ul>
+<p><strong>(7) 现金流量表核心数据</strong>（逐年列表）</p>
+<p>必含项：OCF、Capex、FCF、投资活动CF、融资活动CF、回购金额、OCF/营收、FCF/营收、Capex/营收
+- 若OCF/营收任一年份偏离3年均值&gt;15pct：标注原因（营运资本变动/一次性项目等）</p>
+<p>输出：</p>
+<pre><code>数据完整性：[完整 / 部分缺失（标注缺失项）]
+关键异常发现：[≤3条，每条标注年份和指标]
+主营业务利润口径锚定：[GAAP经营利润 / Non-GAAP / 其他，说明理由]
+</code></pre>
+<h3 id="_3">模块一：资本消耗强度</h3>
+<p>分析项：
+- 每年维持当前盈利规模的必要资本再投入金额
+- 资本投入时间结构：一次投入长期受益 vs 每周期重新投入
+- 判断标准：以"维持每单位盈利所需消耗的持续性资本"为依据，非资产轻重</p>
+<p>输出：<code>[capital-light / capital-hungry]</code>，确认或修正1A初判，列出依据</p>
+<h3 id="_4">模块二：收款模式</h3>
+<p>分析项：
+- 一笔典型交易的完整现金流时间线（成本发生→收款完成的间隔）
+- 垫资方向：企业垫资给客户 vs 占用供应商/客户资金</p>
+<p>输出：<code>[先款后货 / 订阅预收 / 先货后款 / 垫资回收]</code>，对现金状况是正贡献还是负担</p>
+<h3 id="_5">模块三：竞争格局与护城河</h3>
+<p>分析项：
+- 市场结构：[垄断 / 寡头 / 垄断竞争 / 充分竞争]</p>
+<ul>
+<li>护城河分层分析（两层递进结构）：</li>
+</ul>
+<p><strong>第一层：非技术性护城河（商业壁垒）</strong>
+  逐一判断（存在/不存在，强/中/弱）：
+  - 规模效应 | 网络效应 | 转换成本 | 无形资产（品牌/专利/牌照） | 成本优势</p>
+<p><strong>第二层：技术性护城河（数据与算法壁垒）</strong>
+  逐一判断（存在/不存在，强/中/弱）：
+  - 数据资产壁垒：是否拥有难以复制的专有数据集？数据是否形成正反馈循环（Data Flywheel）？
+  - 核心算法/模型壁垒：是否存在长期迭代的算法系统（推荐/搜索/定价/风控等），新进入者即使获得同等数据，复制调优周期是否≥2年？
+  - 履约/供应链系统壁垒：是否建立了高度定制化的实时履约系统？极端场景（峰值/异常）下的稳定性是否经过验证？
+  - AI/前沿技术投入：是否有基于自有业务闭环数据训练的AI能力？先发优势是否构成壁垒（竞争对手能否获取同等质量的训练数据）？</p>
+<blockquote>
+<p>注：并非所有企业都具备技术性护城河（传统制造业/消费品第二层可能为空），框架兼容"第二层不适用"的情况。</p>
+</blockquote>
+<p><strong>两层交互关系判断</strong>：
+  - 技术层是否强化了商业层？（如：数据壁垒↑转换成本，算法↑网络效应）
+  - 商业层是否反哺技术层？（如：规模效应→更多训练数据→更强算法）
+  - 若形成闭环飞轮：标注"复合护城河"
+  - 技术护城河持久性依赖条件：研发投入占比是否稳定？若削减，预计几年内侵蚀？</p>
+<ul>
+<li>定价权验证：是否有主动提价记录，提价后客户流失率</li>
+<li>产业链位置：面对上下游的议价能力</li>
+<li>护城河侵蚀风险：过去5年是否有变窄迹象，竞争对手的进攻维度（商业层 vs 技术层）</li>
+</ul>
+<p>输出：<code>[优质 / 中性 / 负面]</code>
+  附注：护城河类型 = [非技术] xxx + [技术] xxx（若第二层不适用则标注"不适用"）
+  附注：是否构成复合护城河飞轮 = [是/否]</p>
+<h3 id="_6">模块四：周期性</h3>
+<p>分析项：
+- 过去1-2个完整经济周期中收入和盈利的波动幅度（量化为百分比）
+- 外部变量依赖度（大宗商品/利率/汇率）及传导机制
+- 若为强周期：当前处于周期的[底部 / 中段 / 顶部]</p>
+<p>输出：<code>[强周期 / 弱周期 / 非周期]</code>，确认或修正1A初判</p>
+<h3 id="_7">模块五：人力资本依赖</h3>
+<p>分析项：
+- 核心竞争力依赖关键人才的比例（高&gt;50% / 中30-50% / 低&lt;30%）
+- 竞争优势是否已沉淀为系统性能力</p>
+<p>输出：<code>[系统型 / 人才型]</code></p>
+<h3 id="_8">模块六：管理层与治理结构</h3>
+<p>分析项：
+- 现任核心管理层（CEO/董事长/CFO）任职年限
+- 过去5年是否发生管理层重大更换 → 若是，区分"前任期间"和"现任期间"</p>
+<p><strong>资本配置记录</strong>（按管理层任期分别标注）：
+- 留存利润去向：内生扩张 / 外延收购 / 财务投资 / 偿债 / 闲置
+- 事后回报：是否有大额商誉减值 / 投资亏损 / 项目烂尾
+- 若管理层已更换：前任资本错配对当前报表的拖累是否已出清</p>
+<p><strong>现任管理层可观察信号</strong>（仅管理层更换时）：
+- 正面：主动计提减值出清 / 提高分红 / 启动回购
+- 负面：继续追加前任失败项目
+- 中性：发起新收购（尚需观察）</p>
+<p><strong>关联交易检查</strong>（不分前任现任）：
+- 是否存在频繁关联交易 / 定价是否公允 / 是否有利益输送迹象</p>
+<p>输出判断逻辑：</p>
+<pre><code>管理层未更换 → 三选一：[优秀 / 合格 / 损害价值]
+  损害价值 → 否决
+
+管理层已更换且现任任期 &lt; 2年：
+  前任差 + 现任信号正面 → [观察期，暂不否决]（因子3对可预测性额外折扣）
+  前任差 + 现任信号不明或延续前任路径 → 否决
+  前任遗留未出清仍拖累报表 → 否决
+
+管理层已更换且现任任期 ≥ 2年 → 以现任记录为主，三选一判断
+</code></pre>
+<h3 id="_9">模块七：监管与政策风险</h3>
+<p>分析项：
+- 商业模式对政策许可/监管保护的依赖度
+- 行业监管历史与当前趋势（收紧/放开）
+- 国资背景影响（若适用）：稳定性/牌照保护 vs 效率低/非商业化决策</p>
+<p>输出：<code>[优质 / 中性 / 负面]</code></p>
+<h3 id="mda-llm-required">模块八：管理层讨论与分析（MD&amp;A）解读 <code>[LLM-REQUIRED]</code></h3>
+<p>从最新年报/中报的"管理层讨论与分析"章节中提取关键信息，作为定性分析的重要补充。</p>
+<p><strong>指令</strong>：获取并阅读标的最新年报（或中报）的MD&amp;A章节，重点关注以下内容：</p>
+<p><strong>(1) 经营回顾与业绩归因</strong>
+- 管理层对收入/利润变动的自我解释
+- 各业务板块的表现拆解
+- 与分析师基于财务数据的判断是否一致？若不一致，标注分歧点</p>
+<p><strong>(2) 前瞻性指引（Forward Guidance）</strong>
+- 管理层对未来1-2年的展望（收入增长目标、利润率预期、资本开支计划）
+- 是否有明确的量化指引（如"预计收入增长X%"）还是仅有方向性表述
+- 历史指引的兑现记录：过去2-3年管理层指引 vs 实际结果，可信度评估</p>
+<p><strong>(3) 资本配置意图</strong>
+- 分红政策的最新表态（是否有提高/维持/降低派息的信号）
+- 回购计划的最新进展
+- 重大投资/收购计划或剥离意向
+- 债务管理策略（去杠杆/维持/加杠杆）</p>
+<p><strong>(4) 风险因素自述</strong>
+- 管理层自行披露的主要风险因素
+- 是否有新增风险项（vs 上一期）
+- 管理层对风险的应对措施是否具体可行</p>
+<p><strong>(5) 与因子1B其他模块的交叉验证</strong>
+- MD&amp;A中的表述是否与模块三（护城河）、模块四（周期性）、模块六（资本配置）的独立判断一致
+- 若存在矛盾：以财务数据为准，但标注管理层叙述中的"粉饰"或"过度悲观"迹象</p>
+<p>输出：</p>
+<pre><code>MD&amp;A可信度：[高 / 中 / 低]（基于历史指引兑现记录）
+关键发现：[≤3条最重要的信息点]
+与独立分析的一致性：[一致 / 部分分歧 / 重大矛盾]
+对投资判断的影响：[正面 / 中性 / 负面]
+</code></pre>
+<h3 id="1b">因子1B汇总输出</h3>
+<pre><code>模块判断：
+  三大报表基础数据：[完整/部分缺失]，关键异常[≤3条]，利润口径锚定[说明]
+  资本消耗强度：[优质/中性/负面]，理由（≤3点）
+  收款模式：[优质/中性/负面]，理由（≤3点）
+  竞争格局与护城河：[优质/中性/负面]，理由（≤3点）
+  周期性：[优质/中性/负面]，理由（≤3点）
+  人力资本依赖：[优质/中性/负面]，理由（≤3点）
+  管理层与治理结构：[优秀/合格/损害价值/观察期]，理由（≤3点）
+  监管与政策风险：[优质/中性/负面]，理由（≤3点）
+  MD&amp;A解读：[正面/中性/负面]，关键发现（≤3条）
+
+传递至因子2/3的参数：
+  资本消耗强度：[capital-light / capital-hungry]
+  收款模式：[类型]
+  周期性：[强周期 / 弱周期 / 非周期]
+  护城河类型：[非技术] xxx + [技术] xxx（若不适用标注&quot;不适用&quot;）
+  复合护城河飞轮：[是/否]
+  管理层评价：[优秀 / 合格 / 损害价值 / 观察期]
+  主营业务利润口径：[模块〇锚定结果]
+
+因子1结论：[通过 / 否决（原因）]
+</code></pre>
+<hr />
+<h2 id="2computable">四、因子2：穿透回报率（初筛）<code>[COMPUTABLE]</code></h2>
+<p><strong>指令</strong>：读三张报表，逐步计算。仅对通过因子1的标的执行。</p>
+<h3 id="1">步骤1：归母净利润</h3>
+<pre><code>集团净利润 = [A] 亿元
+少数股东损益 = [B] 亿元
+归母净利润 = A - B = [C] 亿元
+少数股东占比 = B / A = [X]%
+
+若最新年度含重大非现金一次性项目（商誉减值等）：
+  报告归母净利润 = [C_reported] 亿元
+  调整归母净利润 = [C_adjusted] 亿元（剔除一次性项目后）
+  标注调整项目及金额
+  后续计算以 C_adjusted 为基准，但同时展示 C_reported 口径结果
+</code></pre>
+<h3 id="2owner-earnings">步骤2：Owner Earnings粗算</h3>
+<pre><code>折旧摊销 = [D] 亿元
+资本开支总额 = [E] 亿元
+
+资本开支/折旧比率（过去5年中位数）= [F]
+
+维持性资本开支粗估 = D × 系数
+  轻资产行业（软件/平台/品牌消费品）：系数 = 0.7 ~ 1.0
+  中等资产行业（制造/零售/物流）：系数 = 1.0 ~ 1.3
+  重资产行业（能源/公用事业/矿业/航运）：系数 = 1.2 ~ 1.8
+  选用系数 = [G]，依据：[说明]
+
+维持性资本开支粗估 = D × G = [H] 亿元
+Owner Earnings = C + D - H = [I] 亿元
+</code></pre>
+<h3 id="3computable">步骤3：分配能力验证（一票否决项）<code>[COMPUTABLE]</code></h3>
+<p>逐年列出过去3-5年数据：</p>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>经营活动现金流净额</th>
+<th>投资活动现金流净额</th>
+<th>自由现金流</th>
+<th>融资活动现金流净额</th>
+<th>期末现金储备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20XX</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>判断规则：
+- 自由现金流过去3-5年是否持续为正？
+- 融资活动现金流是否持续为正（持续借债）？
+- 派息后现金储备是否仍在净增长？</p>
+<pre><code>若自由现金流长期为负 且 融资活动持续为正 → 判定为伪穿透回报 → 一票否决
+</code></pre>
+<h3 id="4llm-required">步骤4：现金上游障碍（港股重点）<code>[LLM-REQUIRED]</code></h3>
+<pre><code>上市主体账面现金 = [J] 亿元
+集团整体现金 = [K] 亿元
+差额 = K - J = [L] 亿元
+障碍判断：[监管审批限制 / 外汇管制 / 子公司债务约束 / 无重大障碍]
+</code></pre>
+<h3 id="5-llm-required">步骤5：分配意愿 <code>[LLM-REQUIRED]</code></h3>
+<pre><code>股息承诺：[明确金额承诺 / 最低支付率承诺 / 无承诺但历史稳定 / 无承诺且不稳定]
+承诺场合：[年报 / 业绩会 / 投资者日 / 无]
+
+过去5年股息支付率序列：[X1%, X2%, X3%, X4%, X5%]
+均值 = [M]%，标准差 = [N]%
+
+注销型回购：过去3年年均金额 = [O] 亿元
+稀释净效果（回购减少股本 - 新发行增加股本）：[正 / 负 / 中性]
+</code></pre>
+<h3 id="6-computable">步骤6：可预测性 <code>[COMPUTABLE]</code></h3>
+<pre><code>保守假设下归母净利润区间：
+  收入 = 当前水平（不增长）
+  利润率 = 历史最低值 [X]%
+  保守归母净利润 = [P] 亿元
+
+区间宽度判断：[窄（可预测性高） / 宽（可预测性低）]
+</code></pre>
+<h3 id="7-computable">步骤7：税务泄漏修正 <code>[COMPUTABLE]</code></h3>
+<pre><code>适用情景：[从以下选择]
+  港股H股（港股通）：综合税率 28%，到手 72%
+  港股红筹/本地注册（港股通）：综合税率 20%，到手 80%
+  港股涉美国来源收入：综合税率 44%，到手 56%（按美国收入占比加权）
+  A股长期持有（&gt;1年）：税率 0%，到手 100%
+  A股持有1月-1年：税率 10%，到手 90%
+
+综合股息税率 = [Q]%
+注：注销型回购不做税务折扣
+</code></pre>
+<h3 id="8-computable">步骤8：初筛穿透回报率计算 <code>[COMPUTABLE]</code></h3>
+<pre><code>支付率锚定值 = min(近3年股息支付率均值, 承诺支付率)
+  近3年均值 = [X]%（若无承诺则仅用近3年均值）
+  注：使用近3年均值而非历史最低值，避免单一异常年份过度压低估算
+
+港股：
+初筛穿透回报率 = [C × 支付率锚定值 × (1 - Q%) + O] / 当前市值
+
+A股（长期持有）：
+初筛穿透回报率 = [C × 支付率锚定值 + O] / 当前市值
+
+计算结果 = [R]%
+</code></pre>
+<h3 id="2">因子2输出</h3>
+<pre><code>分配能力：[通过 / 一票否决（原因）]
+分配意愿：[强 / 中 / 弱]，依据
+可预测性：[高 / 中 / 低]，依据
+税务结构：[情景]，综合税率 [Q]%
+Owner Earnings粗算值：[I] 亿元（系数 [G]）
+初筛穿透回报率：[R]%（此为粗估初筛值，最终以因子3修正值为准）
+因子2结论：[通过 / 否决（原因）]
+</code></pre>
+<hr />
+<h2 id="3-computable">五、因子3：真实可支配现金分析 <code>[COMPUTABLE]</code></h2>
+<p><strong>指令</strong>：逐行追踪现金流底层。仅对通过因子1和因子2的标的执行。采用极端保守假设。</p>
+<h3 id="1_1">步骤1：真实现金收入还原</h3>
+<p>逐年计算：</p>
+<pre><code>营业收入 = [S]
+应收账款净变动 = [T]（增加为正，减少为负）
+预收款/合同负债净变动 = [U]（增加为正，减少为负）
+
+保守处理规则：
+  应收账款净增加 → 扣除（收入未收到现金）
+  应收账款净减少 → 加回（收回了以前的钱）
+  预收款/合同负债净增加 → 不加回（对应未来交付义务）
+  预收款/合同负债净减少 → 扣除（消耗了以前预收的现金）
+  例外：高确定性预收模式（白酒等）可将净增加加回，需标注理由
+
+真实现金收入 = S - T的净增加部分 - U的净减少部分
+收款比率 = 真实现金收入 / S
+
+判断：收款比率是否长期接近1？
+  若长期 &lt; 1 → 说明原因，进入应收账款footnote核查
+</code></pre>
+<p>逐年列表：</p>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>营业收入</th>
+<th>应收账款净变动</th>
+<th>预收/合同负债净变动</th>
+<th>真实现金收入</th>
+<th>收款比率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20XX</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2footnote1llm-required">步骤2：应收账款footnote核查（收款比率&lt;1时必做）<code>[LLM-REQUIRED]</code></h3>
+<pre><code>一年以上应收占比：[X]%，趋势：[上升/稳定/下降]
+坏账计提政策 vs 同行：[宽松/一致/保守]
+关联方应收占比：[X]%
+A股收入确认激进度：[正常/存在激进确认风险]
+</code></pre>
+<h3 id="3">步骤3：非经常性现金流入分类</h3>
+<pre><code>分类原则：按&quot;是否构成可分配现金&quot;分为两类
+
+═══ 保留项（真实可分配现金，不扣除）═══
+
+(A) 资产处置收入 = [V1]
+    逐项列出重大处置：
+    项目1：[名称]，金额 [X]
+    项目2：[名称]，金额 [X]
+    处理规则：不扣除。资产处置收入为真实到手现金，
+    管理层可用于派息、回购或再投资，构成可分配现金来源。
+    附注：标注处置对未来盈利能力的影响
+      → 处置后收入/利润预计减少 [X] 亿元/年
+      → 是否为非核心资产（剥离不影响核心盈利）：[是/否]
+
+(B) 其他投资收入 = [V5]
+    包括但不限于：
+    - 联营/合营企业实际收到的股息分红 = [V5a]
+    - 金融资产利息收入（存款、债券等）= [V5b]
+    - 理财产品/基金赎回收益 = [V5c]
+    - 其他投资相关现金流入 = [V5d]
+    处理规则：不扣除。投资收入为真实到手现金，构成可分配来源。
+    注意：仅计入现金流量表中实际收到的现金部分，
+    不计入利润表中按权益法确认但未收到现金的投资收益。
+
+═══ 扣除项（非可分配，剔除）═══
+
+(C) 应扣除的非经常性流入：
+    政府补贴 = [V2]
+    保险赔款 = [V3]
+    其他一次性非投资类流入 = [V4]
+    应扣除合计 = [V_deduct] = V2 + V3 + V4
+
+═══ 汇总 ═══
+
+保留项合计 = V1 + V5（计入可支配现金）
+  占当年经营活动现金流入比例 = [X]%
+  若保留项合计 &gt; 当年经营现金流 × 50%：
+    标注&quot;非经营收入主导型年份&quot;，
+    步骤10计算修正穿透回报率时需区分含/不含该年份的均值
+</code></pre>
+<h3 id="4">步骤4：经营性现金支出还原</h3>
+<p>逐年计算：</p>
+<pre><code>供应商支付 = 营业成本 + 应付账款净减少（或 - 净增加）= [W1]
+  应付账款是否持续拉长：[是/否]
+
+员工支付 = 现金流量表中支付员工现金 = [W2]
+  递延薪酬/股权激励非现金部分 = [W2a]
+
+现金税款 = 利润表所得税 - 递延所得税变动 = [W3]
+  递延税资产是否持续增加：[是/否]
+
+现金利息 = 财务费用中实际现金支付部分 = [W4]
+  资本化利息 = [W4a]，占总利息支出 [X]%
+  若资本化比例 &gt; 30%：还原为当期支出，调整后现金利息 = W4 + W4a
+
+经营性现金支出合计 = W1 + W2 + W3 + W4（或调整后）= [W]
+</code></pre>
+<h3 id="5">步骤5：资本开支与投资的极端保守处理</h3>
+<pre><code>核心原则：全部纳入扣除项，不区分维持性/成长性、必要/可选
+
+(a) 资本开支总额 = [E]（全额扣除）
+(b) 投资性购买 = [X1]（对外投资+收购+参股，全额扣除）
+    逐项列出重大项目：
+    项目1：[名称]，金额 [X]
+    项目2：[名称]，金额 [X]
+(c) 隐性必要支出还原 = [X2]
+    研发费用资本化还原：[金额]
+    销售费用资本化还原：[金额]
+    递延资产费用化还原：[金额]
+
+总扣除额 = E + X1 + X2 = [Y]
+
+补充标注（不参与计算）：
+  疑似成长性支出 = [Z]（判断依据：停止后1-2年内盈利不下滑）
+  占总扣除额比例 = Z / Y = [X]%
+</code></pre>
+<h3 id="6a-llm-required">步骤6：A股与港股准则差异核查 <code>[LLM-REQUIRED]</code></h3>
+<pre><code>A股（CAS）额外核查：
+  收入确认激进度：[正常/激进]，说明
+  递延税资产趋势：[稳定/持续增加]
+  资本化利息比例：[正常/异常高]
+  减值计提 vs 同行：[充分/不足]
+
+港股（HKFRS）额外核查：
+  HKFRS 9预期信用损失计提：[充分/不足]
+  HKFRS 16表外租赁负债规模：[金额]
+  合并范围（VIE/SPV）：[无/有，规模]
+
+或有负债与表外风险：
+  对外担保：[金额]，担保对象：[关联方/非关联方]
+  重大诉讼：[金额]，胜诉概率：[高/中/低]
+  资本承诺（未付）：[金额]
+  经营租赁承诺：[金额]
+</code></pre>
+<h3 id="7-computable_1">步骤7：真实可支配现金结余计算 <code>[COMPUTABLE]</code></h3>
+<p>逐年计算：</p>
+<pre><code>真实可支配现金结余 = 真实现金收入
+                  + 资产处置收入（V1）
+                  + 其他投资收入（V5）
+                  - 应扣除非经常性流入（V_deduct）
+                  - 经营性现金支出
+                  - 总扣除额（资本开支+投资+隐性支出）
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>真实现金收入</th>
+<th>+ 处置收入</th>
+<th>+ 投资收入</th>
+<th>- 其他非经常性</th>
+<th>- 经营支出</th>
+<th>- 总扣除额</th>
+<th>= 结余</th>
+<th>疑似成长性占比</th>
+<th>非经营收入占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20XX</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code>历史均值（含全部年份）= [AA_incl] 亿元
+历史均值（剔除非经营收入主导型年份）= [AA_excl] 亿元
+若两者差异 &gt; 30%：以 AA_excl 作为外推基准，AA_incl 仅作参考
+若两者差异 ≤ 30%：以 AA_incl 作为外推基准
+选用基准值 AA = [AA_incl / AA_excl]，理由：[说明]
+</code></pre>
+<h3 id="8">步骤8：现金储备质量验证</h3>
+<pre><code>账面现金 = [BB]
+受限资金（质押/冻结/监管账户）= [CC]
+上游障碍现金（内地子公司留存）= [DD]
+专项用途资金 = [EE]
+可自由支配现金 = BB - CC - DD - EE = [FF] 亿元
+</code></pre>
+<h3 id="9">步骤9：派息后现金储备净变动</h3>
+<p>逐年：</p>
+<pre><code>期末可自由支配现金 - 期初可自由支配现金 - 当年结余 + 当年派息及回购
+是否持续为正：[是 → 造血&gt;分配，健康 / 否 → 需说明]
+</code></pre>
+<h3 id="10-computable">步骤10：修正穿透回报率计算 <code>[COMPUTABLE]</code></h3>
+<pre><code>选用基准值 AA = [步骤7确定值] 亿元
+支付率锚定值 = min(近3年股息支付率均值, 承诺支付率)（与因子2同口径）
+
+港股：
+修正穿透回报率 = [AA × 支付率锚定值 × (1 - Q%) + O] / 当前市值
+
+A股（长期持有）：
+修正穿透回报率 = [AA × 支付率锚定值 + O] / 当前市值
+
+修正穿透回报率 = [GG]%
+
+vs 因子2初筛值 [R]%：
+  差异 = R - GG = [HH] 个百分点
+  若 HH &gt; 2个百分点：标注差异来源
+</code></pre>
+<h3 id="111">步骤11：与因子1交叉验证</h3>
+<pre><code>因子3现金流序列趋势：[稳定 / 温和上升 / 波动 / 趋势下滑]
+因子1商业模式判断：[优质 / 中性 / 负面]
+
+交叉验证结果：
+  两者一致 → 外推可信度高
+  因子3优于因子1预期 → 可能存在隐性护城河，建议重新审视因子1
+  因子3弱于因子1预期 → 最危险背离，必须找到解释，否则大幅折扣或否决
+</code></pre>
+<h3 id="3_1">因子3输出</h3>
+<pre><code>真实可支配现金结余序列（极端保守）：[逐年]
+  疑似成长性支出占比：[逐年]
+  资产处置收入：[逐年]
+  其他投资收入：[逐年]
+  非经营收入主导型年份：[标注哪些年份，若有]
+现金储备可自由支配金额：[FF] 亿元
+因子3内部验证：[通过 / 否决（原因）]
+
+修正穿透回报率：[GG]%
+  基准值 AA：[AA_incl / AA_excl]，选用理由：[说明]
+  vs 因子2初筛值：[R]%，差异 [HH] pct
+  差异来源：[若&gt;2pct，说明]
+
+与因子1交叉验证：[一致 / 因子3优于预期 / 因子3弱于预期]
+外推可信度：[高 / 中 / 低]
+保守真实可支配现金基准估算值：[AA] 亿元
+因子3结论：[通过 / 否决（原因）]
+</code></pre>
+<hr />
+<h2 id="4-computable">六、因子4：估值与安全边际 <code>[COMPUTABLE]</code></h2>
+<p><strong>指令</strong>：以因子3修正穿透回报率为锚，判断安全边际并排查价值陷阱。仅对通过因子1-3的标的执行。</p>
+<h3 id="1_2">步骤1：门槛计算</h3>
+<pre><code>Rf = [输入值]%
+
+港股门槛 = max(5%, Rf + 3%) = max(5%, [计算值]%) = [II]%
+A股门槛 = max(3.5%, Rf + 2%) = max(3.5%, [计算值]%) = [II]%
+
+修正穿透回报率 [GG]% vs 门槛 [II]%
+  GG ≥ II → 通过，进入步骤2
+  GG &lt; II → 不达标
+    若疑似成长性支出占总扣除额 &gt; 30% → 标注&quot;建议细化假设重新测算&quot;
+    否则 → 排除
+</code></pre>
+<h3 id="2-llm-required">步骤2：价值陷阱排查 <code>[LLM-REQUIRED]</code></h3>
+<p>逐项检查（仅调用前序因子结论，不做新分析）：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>陷阱特征</th>
+<th>数据来源</th>
+<th>判断标准</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>现金流趋势性恶化</td>
+<td>因子3结余序列</td>
+<td>连续≥2年下降且降幅&gt;15%</td>
+<td>[存在/不存在]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>护城河正在收窄</td>
+<td>因子1B模块三</td>
+<td>非技术层侵蚀判定为"负面"，或技术层被颠覆（竞争对手算法/数据优势逆转）；若为复合护城河飞轮，单层收窄但另一层稳固的可降级为"中"而非直接触发</td>
+<td>[存在/不存在]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>行业结构性衰退</td>
+<td>因子1B模块四</td>
+<td>终端需求不可逆萎缩（非周期性波动）</td>
+<td>[存在/不存在]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>分配意愿存疑</td>
+<td>因子2分配意愿</td>
+<td>判定为"弱"</td>
+<td>[存在/不存在]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>管理层损害价值</td>
+<td>因子1B模块六</td>
+<td>判定为"损害价值"或"观察期"</td>
+<td>[存在/不存在]</td>
+</tr>
+</tbody>
+</table>
+<pre><code>存在项数 = [N]
+  N = 0 → 价值陷阱风险：低
+  N = 1 → 价值陷阱风险：中，标注风险点
+  N ≥ 2 → 价值陷阱风险：高
+    若 GG &gt; II × 1.5 → 保留（回报率足够覆盖风险）
+    否则 → 排除
+</code></pre>
+<h3 id="3_2">步骤3：安全边际与仓位</h3>
+<pre><code>安全边际 = GG - II = [JJ] 个百分点
+
+周期性修正（仅强周期企业）：
+  周期底部 → 门槛下调1pct → 修正安全边际 = GG - (II - 1%)
+  周期顶部 → 门槛上调2pct → 修正安全边际 = GG - (II + 2%)
+  周期中段或非周期 → 不调整
+
+修正后安全边际 = [KK] 个百分点
+</code></pre>
+<p>仓位矩阵：</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>仓位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安全边际 ≥ 1.5pct + 外推可信度高 + 陷阱风险低</td>
+<td>标准仓位</td>
+</tr>
+<tr>
+<td>安全边际 ≥ 1.5pct + 外推可信度高 + 陷阱风险中</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>安全边际 ≥ 1.5pct + 外推可信度中 + 陷阱风险低</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>安全边际 0.5-1.5pct + 外推可信度高 + 陷阱风险低</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>安全边际 0.5-1.5pct + 外推可信度中 + 陷阱风险低</td>
+<td>观察仓位（30%）</td>
+</tr>
+<tr>
+<td>安全边际 0-0.5pct</td>
+<td>观察仓位或等待</td>
+</tr>
+<tr>
+<td>安全边际 &lt; 0</td>
+<td>不建仓</td>
+</tr>
+<tr>
+<td>外推可信度低</td>
+<td>观察仓位或不建仓</td>
+</tr>
+<tr>
+<td>陷阱风险高且回报率 &lt; 门槛×1.5</td>
+<td>排除</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">因子4输出</h3>
+<pre><code>Rf：[X]%
+门槛值：[II]%（计算过程）
+修正穿透回报率：[GG]%
+安全边际：[JJ] pct
+
+价值陷阱排查：
+  现金流趋势性恶化：[存在/不存在]
+  护城河正在收窄：[存在/不存在]
+  行业结构性衰退：[存在/不存在]
+  分配意愿存疑：[存在/不存在]
+  管理层损害价值：[存在/不存在]
+  风险等级：[低/中/高]
+
+周期性修正：[不适用 / 底部-1pct / 顶部+2pct]
+修正后安全边际：[KK] pct
+
+仓位建议：[标准 / 70% / 50% / 观察 / 排除]
+因子4结论：[通过 / 排除（原因）]
+</code></pre>
+<p></strategy_knowledge_base></p>
+<hr />
+<p><execution_workflow></p>
+<h2 id="_10">执行工作流</h2>
+<p>收到用户输入的标的名称/代码后，严格按以下顺序执行：</p>
+<h3 id="step-1">Step 1: 数据获取（强制执行）</h3>
+<ol>
+<li><strong>基础市场数据</strong>（MCP工具优先）：</li>
+<li>最新股价、总市值、总股本、股息率(TTM)</li>
+<li>中国十年期国债收益率（Rf）</li>
+<li>
+<p>上市结构（H股/红筹/开曼/A股）及适用税率</p>
+</li>
+<li>
+<p><strong>财务报表数据</strong>（至少最近5年）：</p>
+</li>
+<li>损益表：收入、归母净利润、少数股东损益、D&amp;A、利息支出、所得税</li>
+<li>资产负债表：现金、应收、应付、存货、有息负债、总负债、总资产、股东权益</li>
+<li>现金流量表：OCF、投资活动CF、融资活动CF、Capex、股息支付</li>
+<li>
+<p>若某科目缺失，标注「⚠️ 数据缺失」</p>
+</li>
+<li>
+<p><strong>股息与回购历史</strong>：</p>
+</li>
+<li>
+<p>逐年DPS、支付率、回购金额</p>
+</li>
+<li>
+<p><strong>管理层与治理信息</strong>（联网搜索）：</p>
+</li>
+<li>控股股东持股比例及身份</li>
+<li>核心管理层任期、变更记录</li>
+<li>
+<p>审计师信息</p>
+</li>
+<li>
+<p><strong>MD&amp;A内容</strong>（联网搜索年报/中报原文或摘要）：</p>
+</li>
+<li>
+<p>最新年报/中报的管理层讨论与分析关键内容</p>
+</li>
+<li>
+<p>所有数据来源记录URL/工具名称，汇总至报告末尾</p>
+</li>
+</ol>
+<h3 id="step-2-1a">Step 2: 因子1A — 五分钟快筛</h3>
+<ul>
+<li>逐条判断6项检查</li>
+<li>任一项否决 → 停止全部后续分析，输出否决报告</li>
+<li>全部通过 → 输出初步画像，进入Step 3</li>
+</ul>
+<h3 id="step-3-1b">Step 3: 因子1B — 深度定性分析</h3>
+<ul>
+<li>先执行模块〇（三大报表基础数据），建立数据基础并锚定利润口径</li>
+<li>按模块一至模块八逐一分析</li>
+<li>模块三（护城河）使用两层递进结构，判断是否构成复合护城河飞轮</li>
+<li>若模块六（管理层）触发否决 → 停止</li>
+<li>输出因子1B汇总，传递参数至因子2/3</li>
+</ul>
+<h3 id="step-4-2">Step 4: 因子2 — 穿透回报率初筛</h3>
+<ul>
+<li>按步骤1-8逐步计算</li>
+<li>步骤3分配能力验证为一票否决项</li>
+<li>输出初筛穿透回报率 R%</li>
+</ul>
+<h3 id="step-5-3">Step 5: 因子3 — 真实可支配现金分析</h3>
+<ul>
+<li>按步骤1-11逐步执行</li>
+<li>输出修正穿透回报率 GG%</li>
+<li>与因子1交叉验证</li>
+</ul>
+<h3 id="step-6-4">Step 6: 因子4 — 估值与安全边际</h3>
+<ul>
+<li>门槛比较 → 价值陷阱排查 → 安全边际与仓位</li>
+<li>输出最终判断</li>
+</ul>
+<h3 id="step-7">Step 7: 生成报告</h3>
+<ul>
+<li>严格按照 <code>&lt;report_template&gt;</code> 输出完整Markdown报告</li>
+<li>不得省略任何章节</li>
+</ul>
+<p></execution_workflow></p>
+<hr />
+<p><report_template></p>
+<h2 id="_11">报告输出模板</h2>
+<p>输出时严格遵循以下Markdown结构：</p>
+<pre><code class="language-markdown"># 龟龟投资策略 · 选股分析报告：{公司名称}（{股票代码}）
+
+---
+
+## 报告元信息
+
+| 项目 | 内容 |
+|:-----|:-----|
+| 分析日期 | {YYYY-MM-DD} |
+| 框架版本 | 龟龟投资策略 v0.8 |
+| 最新股价 | {价格} {币种}（截至 {日期}） |
+| 最新市值 | {市值} {币种}（≈ {换算值} {另一币种}） |
+| 总股本 | {股数} |
+| Rf（十年期国债） | {值}% |
+| 上市结构 | {H股/红筹/开曼/A股}，适用股息税率 {Q}% |
+| 数据来源 | {来源列表} |
+
+---
+
+## 一、Executive Summary（执行摘要）
+
+**一句话结论**：{标的名称} — [买入 / 观察 / 排除]。
+
+**核心数字速览**：
+
+| 指标 | 数值 | 判定 |
+|:-----|:-----|:-----|
+| Owner Earnings | {I} 亿元 | — |
+| 初筛穿透回报率 | {R}% | — |
+| 修正穿透回报率 | {GG}% | — |
+| 门槛值 | {II}% | — |
+| 安全边际 | {KK} pct | {≥1.5/0.5-1.5/0-0.5/&lt;0} |
+| 价值陷阱风险 | {低/中/高} | — |
+| 外推可信度 | {高/中/低} | — |
+| **仓位建议** | **{标准/70%/50%/观察/排除}** | — |
+
+**最大优势**：{一条}
+**最大风险**：{一条}
+
+---
+
+## 二、因子1A：五分钟快筛
+
+| 序号 | 检查项 | 判断 | 结果 |
+|------|--------|------|------|
+| 1 | 审计意见异常 | {说明} | {否/是→否决} |
+| 2 | 频繁更换审计师 | {说明} | {否/是→否决} |
+| 3 | 财务造假或重大违规前科 | {说明} | {否/是→否决} |
+| 4 | 看不懂 | {说明} | {否/是→否决} |
+| 5 | 商业模式未被验证 | {说明} | {否/是→否决} |
+| 6 | 控股股东重大负面信号 | {说明} | {否/是→否决} |
+
+**结论**：{全部通过 / 第X项否决}
+
+初步画像：{资本消耗/收款模式/周期性/护城河直觉}
+
+---
+
+## 三、因子1B：深度定性分析
+
+### 3.0 三大报表基础数据与关键指标
+{(1)利润表核心数据 (2)关键盈利能力指标 (3)增长率分析 (4)重大变动说明 (5)资产负债表核心数据 (6)资产负债表深度分析（净现金/有息负债/资产周转率） (7)现金流量表核心数据}
+
+数据完整性：{完整/部分缺失}
+关键异常发现：{≤3条}
+主营业务利润口径锚定：{说明}
+
+---
+
+### 3.1 资本消耗强度
+{分析内容}
+输出：{capital-light / capital-hungry}
+
+### 3.2 收款模式
+{分析内容}
+输出：{类型}
+
+### 3.3 竞争格局与护城河
+{分析内容}
+
+第一层：非技术性护城河
+{逐项判断表}
+
+第二层：技术性护城河
+{逐项判断表，若不适用标注&quot;不适用&quot;}
+
+两层交互关系：{分析，是否形成复合护城河飞轮}
+
+输出：{优质 / 中性 / 负面}
+护城河类型：{[非技术] xxx + [技术] xxx}
+复合护城河飞轮：{是/否}
+
+### 3.4 周期性
+{分析内容}
+输出：{强周期 / 弱周期 / 非周期}
+
+### 3.5 人力资本依赖
+{分析内容}
+输出：{系统型 / 人才型}
+
+### 3.6 管理层与治理结构
+{分析内容，含资本配置记录、现任信号、关联交易}
+输出：{优秀 / 合格 / 损害价值 / 观察期}
+
+### 3.7 监管与政策风险
+{分析内容}
+输出：{优质 / 中性 / 负面}
+
+### 3.8 管理层讨论与分析（MD&amp;A）解读
+{(1)经营回顾 (2)前瞻指引 (3)资本配置意图 (4)风险因素 (5)交叉验证}
+
+| 维度 | 判断 |
+|:-----|:-----|
+| MD&amp;A可信度 | {高/中/低} |
+| 关键发现 | {≤3条} |
+| 与独立分析一致性 | {一致/部分分歧/重大矛盾} |
+| 对投资判断的影响 | {正面/中性/负面} |
+
+### 3.9 因子1B汇总
+
+{模块判断汇总表}
+{传递至因子2/3的参数}
+**因子1结论**：{通过 / 否决}
+
+---
+
+## 四、因子2：穿透回报率初筛
+
+### 4.1 归母净利润
+{步骤1计算，含调整口径说明}
+
+### 4.2 Owner Earnings
+{步骤2计算，含系数选择依据}
+
+### 4.3 分配能力验证
+{步骤3现金流表格及判断}
+
+### 4.4 现金上游障碍
+{步骤4分析}
+
+### 4.5 分配意愿
+{步骤5分析}
+
+### 4.6 可预测性
+{步骤6分析}
+
+### 4.7 税务泄漏修正
+{步骤7计算}
+
+### 4.8 初筛穿透回报率
+{步骤8计算}
+
+### 4.9 因子2输出
+{汇总}
+
+---
+
+## 五、因子3：真实可支配现金分析
+
+### 5.1 真实现金收入还原
+{步骤1计算及逐年表格}
+
+### 5.2 应收账款核查
+{步骤2，如适用}
+
+### 5.3 非经常性现金流入分类
+{步骤3保留项+扣除项}
+
+### 5.4 经营性现金支出还原
+{步骤4}
+
+### 5.5 资本开支与投资处理
+{步骤5，含逐项列示}
+
+### 5.6 准则差异核查
+{步骤6}
+
+### 5.7 真实可支配现金结余
+{步骤7逐年表格及AA计算}
+
+### 5.8 现金储备质量
+{步骤8}
+
+### 5.9 派息后净变动
+{步骤9}
+
+### 5.10 修正穿透回报率
+{步骤10计算}
+
+### 5.11 交叉验证
+{步骤11}
+
+### 5.12 因子3输出
+{汇总}
+
+---
+
+## 六、因子4：估值与安全边际
+
+### 6.1 门槛计算
+{步骤1}
+
+### 6.2 价值陷阱排查
+{步骤2逐项表格}
+
+### 6.3 安全边际与仓位
+{步骤3计算及仓位矩阵匹配}
+
+### 6.4 因子4输出
+{汇总}
+
+---
+
+## 七、最终综合输出
+
+═══════════════════════════════════════
+        龟龟投资策略 · 选股分析报告
+═══════════════════════════════════════
+
+企业：{名称}
+上市地：{A股/港股}  结构：{类型}
+分析期：{年份范围}  市值：{X}亿元
+
+───────────────────────────────────────
+因子1A（五分钟快筛）：{通过 / 否决（第X条）}
+因子1B（深度定性）：{通过 / 否决（模块+原因）}
+  MD&amp;A解读：{正面/中性/负面}
+因子2（穿透回报率初筛）：{通过 / 否决}
+  Owner Earnings：{I} 亿元
+  初筛穿透回报率：{R}%
+因子3（真实可支配现金）：{通过 / 否决}
+  修正穿透回报率：{GG}%（最终估值输入）
+  vs 因子2差异：{HH} pct
+  外推可信度：{高/中/低}
+因子4（估值与安全边际）：{通过 / 排除}
+  门槛值：{II}%
+  安全边际：{KK} pct
+  价值陷阱风险：{低/中/高}
+  仓位建议：{标准/70%/50%/观察/排除}
+───────────────────────────────────────
+
+最终判断：{买入 / 观察 / 排除}
+最大优势：{一条}
+最大风险：{一条}
+═══════════════════════════════════════
+
+---
+
+## 八、风险提示与待验证事项
+
+### 8.1 该标的特定风险
+{根据分析结果列出}
+
+### 8.2 需要人工验证的内容
+
+&gt; ⚠️ 以下内容AI无法完全确认，建议投资者在做出决策前自行核实：
+
+| # | 待验证事项 | 原因 | 建议验证方式 |
+|:-:|:---------|:-----|:-----------|
+| 1 | {事项} | {原因} | {方式} |
+
+---
+
+## 九、数据来源与免责声明
+
+### 9.1 数据来源汇总
+
+| 数据项 | 来源 | URL/工具 | 获取日期 |
+|:-------|:-----|:---------|:--------:|
+| {项目} | {来源} | {URL} | {日期} |
+
+### 9.2 免责声明
+
+本报告由AI模型基于龟龟投资策略v0.8框架和公开财务数据自动生成，仅供参考，不构成投资建议。投资者应自行核实所有数据，并根据自身风险承受能力做出投资决策。AI分析存在以下固有局限：(1) 财务数据可能存在提取误差；(2) 联网搜索的市场数据可能存在时滞；(3) 定性判断依赖有限信息；(4) 历史数据不代表未来表现。
+</code></pre>
+<p></report_template></p>
+<hr />
+<p><em>龟龟投资策略 AI Prompt v0.8 | 价值型 / 估值回归型选股</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

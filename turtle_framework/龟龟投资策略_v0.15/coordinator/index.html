@@ -1,0 +1,4094 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://terancejiang.github.io/Stock_Analyze_Prompts/turtle_framework/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.15/coordinator/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../phase1_%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>龟龟投资策略 v0.15 — 协调器（Coordinator） - Stock Analyze Prompts</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#v015-coordinator" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Stock Analyze Prompts" class="md-header__button md-logo" aria-label="Stock Analyze Prompts" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stock Analyze Prompts
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              龟龟投资策略 v0.15 — 协调器（Coordinator）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/terancejiang/Stock_Analyze_Prompts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Stock Analyze Prompts" class="md-nav__button md-logo" aria-label="Stock Analyze Prompts" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Stock Analyze Prompts
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/terancejiang/Stock_Analyze_Prompts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股分析 (Cigbutt)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    烟蒂股分析 (Cigbutt)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt v1.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cigbutt/%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90Prompt_v1.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    静态价值型烟蒂股量化分析 Prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 (Turtle)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    龟龟投资策略 (Turtle)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.15
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    v0.15
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 v0.15 — 协调器（Coordinator）
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 v0.15 — 协调器（Coordinator）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入解析
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段调度
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sub-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sub-agent 调用指令
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sub-agent 调用指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-0pdf-phase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 0：PDF 年报确保（协调器在启动 Phase 2 前必须执行）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf_path-phase-1-phase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        当 pdf_path 有效时（并行启动 Phase 1 + Phase 2）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf_path-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        当 pdf_path 为 null 时（自动下载失败且无用户上传，降级执行）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单位统一规则 ⭐
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        报表时效性规则
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EV口径与现金保护规则摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        异常处理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        策略目录只读规则 ⚠️
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件路径约定
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase1_%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1：数据采集（Agent 1 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase2_PDF%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2：PDF 年报解析（Agent 2 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase3_%E5%88%86%E6%9E%90%E4%B8%8E%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3：分析与报告（Agent 3 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    历史版本
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    历史版本
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v0.14
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    v0.14
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.14/coordinator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 v0.14 — 协调器（Coordinator）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.14/phase1_%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 1：数据采集（Agent 1 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.14/phase2_PDF%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2：PDF 年报解析（Agent 2 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_v0.14/phase3_%E5%88%86%E6%9E%90%E4%B8%8E%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 3：分析与报告（Agent 3 Prompt）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC/%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5_AI_Prompt_v0.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略：AI选股分析Prompt v0.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股分析报告
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    烟蒂股分析报告
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%AD%E5%9B%BD%E5%8A%A8%E5%90%91_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国动向（3818.HK）静态价值型烟蒂股分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%BA%AC%E6%8A%95%E4%BA%A4%E9%80%9A%E7%A7%91%E6%8A%80_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：京投交通科技（01522.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E9%87%91%E8%9E%8D%E8%A1%97%E7%89%A9%E4%B8%9A_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：金融街物业（01502.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E9%87%91%E8%9E%8D%E8%A1%97%E7%89%A9%E4%B8%9A_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融街物业 (01502.HK) — 静态价值型烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E5%AE%9D%E8%83%9C%E5%9B%BD%E9%99%85_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：宝胜国际（3813.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E9%A6%99%E6%B8%AF%E5%B0%8F%E8%BD%AE_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：香港小轮（集团）有限公司（50.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%8A%E6%B5%B7%E5%AE%9E%E4%B8%9A%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上海实业控股(00363.HK)烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%8A%E6%B5%B7%E5%AE%9E%E4%B8%9A%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v1.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上海实业控股（363.HK）— 烟蒂股量化策略分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%AD%E5%9B%BD%E6%B7%80%E7%B2%89%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国淀粉控股有限公司（3838.HK）烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E5%92%8C%E8%AE%B0%E7%94%B5%E8%AE%AF%E9%A6%99%E6%B8%AF_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    和记电讯香港控股（215.HK）— 静态价值型烟蒂股深度分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%9C%9D%E8%81%9A%E7%9C%BC%E7%A7%91_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2219.HK 朝聚眼科医疗控股 — 烟蒂股分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E9%A6%99%E6%B8%AF%E4%B8%AD%E6%97%85_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：香港中旅国际投资有限公司（308.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%9C%9D%E4%BA%91%E9%9B%86%E5%9B%A2_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    朝云集团(6601.HK)烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%99%AE%E5%8D%8E%E5%92%8C%E9%A1%BA_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：普华和顺集团公司（1358.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%B8%AF%E9%80%9A%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    港通控股（00032.HK）烟蒂股策略分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%AD%E8%A7%86%E9%87%91%E6%A1%A5_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中视金桥(00623.HK)烟蒂股量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E5%A4%A9%E6%B4%A5%E5%8F%91%E5%B1%95_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    天津发展控股有限公司(00882.HK)烟蒂股精确量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E6%9D%8E%E6%B0%8F%E5%A4%A7%E8%8D%AF%E6%88%BF_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    烟蒂股量化分析报告：李氏大药厂控股有限公司（0950.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E7%A6%85%E6%B8%B8%E7%A7%91%E6%8A%80_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    禅游科技控股（2660.HK）— 静态价值型烟蒂股深度分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/cigbutt_reports/%E4%B8%AD%E6%95%99%E6%8E%A7%E8%82%A1_%E7%83%9F%E8%92%82%E8%82%A1%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中教控股(00839.HK)烟蒂股精确量化分析报告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略报告
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    龟龟投资策略报告
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网易
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    网易
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/09999_%E7%BD%91%E6%98%93/%E7%BD%91%E6%98%93-S_09999_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：网易-S（09999.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/09999_%E7%BD%91%E6%98%93/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 09999.HK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/09999_%E7%BD%91%E6%98%93/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：网易-S (NetEase, Inc.)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    福寿园
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    福寿园
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/01448_%E7%A6%8F%E5%AF%BF%E5%9B%AD/%E7%A6%8F%E5%AF%BF%E5%9B%AD_01448_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：福寿园（01448.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/01448_%E7%A6%8F%E5%AF%BF%E5%9B%AD/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 01448.HK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/01448_%E7%A6%8F%E5%AF%BF%E5%9B%AD/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：福寿园国际集团有限公司
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/01448_%E7%A6%8F%E5%AF%BF%E5%9B%AD/data_pack_report_interim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中报附注数据包：福寿园国际集团有限公司
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    格力电器
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    格力电器
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000651_%E6%A0%BC%E5%8A%9B%E7%94%B5%E5%99%A8/%E6%A0%BC%E5%8A%9B%E7%94%B5%E5%99%A8_000651_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：格力电器（000651.SZ）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000651_%E6%A0%BC%E5%8A%9B%E7%94%B5%E5%99%A8/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 000651.SZ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000651_%E6%A0%BC%E5%8A%9B%E7%94%B5%E5%99%A8/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：格力电器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_4" id="__nav_4_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    五粮液
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    五粮液
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000858_%E4%BA%94%E7%B2%AE%E6%B6%B2/%E4%BA%94%E7%B2%AE%E6%B6%B2_000858_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：五粮液（000858.SZ）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/000858_%E4%BA%94%E7%B2%AE%E6%B6%B2/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 000858.SZ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_5" id="__nav_4_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中国食品
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中国食品
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/00506_%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81/%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81_00506_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：中国食品有限公司（00506.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/00506_%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 00506.HK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/00506_%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：中国食品有限公司 (China Foods Limited, 00506.HK)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/00506_%E4%B8%AD%E5%9B%BD%E9%A3%9F%E5%93%81/data_pack_report_interim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中报附注数据包：中国食品有限公司 (China Foods Limited, 00506.HK)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_6" id="__nav_4_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重庆百货
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    重庆百货
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600729_%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7/%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7_600729_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：重庆百货（600729.SH）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600729_%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 600729.SH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600729_%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：重庆百货
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600729_%E9%87%8D%E5%BA%86%E7%99%BE%E8%B4%A7/data_pack_report_interim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中报附注数据包：重庆百货
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_7" id="__nav_4_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    伊利股份
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    伊利股份
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600887_%E4%BC%8A%E5%88%A9%E8%82%A1%E4%BB%BD/%E4%BC%8A%E5%88%A9%E8%82%A1%E4%BB%BD_600887_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：伊利股份（600887.SH）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600887_%E4%BC%8A%E5%88%A9%E8%82%A1%E4%BB%BD/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包 — 600887.SH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/600887_%E4%BC%8A%E5%88%A9%E8%82%A1%E4%BB%BD/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报附注数据包：伊利股份
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_8" id="__nav_4_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    保利物业
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    保利物业
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E4%BF%9D%E5%88%A9%E7%89%A9%E4%B8%9A06049/%E4%BF%9D%E5%88%A9%E7%89%A9%E4%B8%9A_06049_%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：保利物业（06049.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E4%BF%9D%E5%88%A9%E7%89%A9%E4%B8%9A06049/data_pack_market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据包：保利物业（06049.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E4%BF%9D%E5%88%A9%E7%89%A9%E4%B8%9A06049/data_pack_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    年报数据包：保利物业
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E8%92%99%E7%89%9B%E4%B9%B3%E4%B8%9A_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A_v0.13_H12025%E6%9B%B4%E6%96%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：中国蒙牛乳业（2319.HK）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E5%88%86%E4%BC%97%E4%BC%A0%E5%AA%92_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：分众传媒（002027.SZ）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/DUOL_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：Duolingo, Inc.（NASDAQ: DUOL）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/TCOM_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：携程集团（TCOM.US）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/turtle_reports/%E5%8F%A4%E4%BA%95%E8%B4%A1_%E9%BE%9F%E9%BE%9F%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    龟龟投资策略 · 选股分析报告：古井贡酒（000596.SZ / 200596.SZ）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入解析
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段调度
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sub-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sub-agent 调用指令
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sub-agent 调用指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-0pdf-phase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 0：PDF 年报确保（协调器在启动 Phase 2 前必须执行）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf_path-phase-1-phase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        当 pdf_path 有效时（并行启动 Phase 1 + Phase 2）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdf_path-null" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        当 pdf_path 为 null 时（自动下载失败且无用户上传，降级执行）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单位统一规则 ⭐
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        报表时效性规则
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EV口径与现金保护规则摘要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        异常处理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        策略目录只读规则 ⚠️
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件路径约定
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="v015-coordinator">龟龟投资策略 v0.15 — 协调器（Coordinator）</h1>
+<blockquote>
+<p>本文件为多阶段分析的调度中枢。协调器自身不执行数据获取或分析计算，仅负责：
+(1) 解析用户输入；(2) 判断任务组合；(3) 按依赖关系调度 Sub-agent；(4) 交付最终报告。</p>
+</blockquote>
+<hr />
+<h2 id="_1">输入解析</h2>
+<p>用户输入可能包含以下组合：</p>
+<table>
+<thead>
+<tr>
+<th>输入项</th>
+<th>示例</th>
+<th>必需？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>股票代码或名称</td>
+<td><code>0001.HK</code> / <code>长和</code></td>
+<td>✅ 必需</td>
+</tr>
+<tr>
+<td>持股渠道</td>
+<td><code>港股通</code> / <code>直接</code> / <code>美股券商</code></td>
+<td>可选（未指定则用默认值）</td>
+</tr>
+<tr>
+<td>PDF 年报文件</td>
+<td>用户上传的 <code>.pdf</code> 文件</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<p><strong>解析规则</strong>：
+1. 从用户消息中提取股票代码/名称和持股渠道
+2. 检查是否有 PDF 文件上传（检查 <code>/sessions/*/mnt/uploads/</code> 目录中的 <code>.pdf</code> 文件）
+3. 若用户只给了公司名称没给代码，在 Phase 1 中由 Agent 1 通过 <code>search_stocks</code> 确认代码</p>
+<hr />
+<h2 id="_2">阶段调度</h2>
+<pre><code>┌─────────────────────────────────────────────┐
+│              用户输入解析                      │
+│   股票代码 = {code}                           │
+│   持股渠道 = {channel | 默认}                  │
+│   PDF年报 = {有 | 无}                         │
+└──────────┬──────────────────────────────────┘
+           │
+           ▼
+┌─────────────────────────────────────────────┐
+│         PDF 年报确保步骤（协调器执行）           │
+│                                               │
+│  ① 检查用户是否上传了 PDF 年报                  │
+│  ② 若有上传：校验是否为最新完整财年年报          │
+│     （通过文件名/标题中的年份判断）              │
+│  ③ 若无上传 或 上传的并非最新财年年报：           │
+│     → 调用 snowball-report-downloader          │
+│       自动下载最新完整财年年报                    │
+│     → 下载成功：使用下载的 PDF 路径              │
+│     → 下载失败：记录失败原因，Phase 2 降级执行    │
+│                                               │
+│  结果：pdf_path = {已确认的PDF路径 | null}      │
+└──────────┬──────────────────────────────────┘
+           │
+           ▼
+┌─────────────────────── 并行启动 ──────────────────────┐
+│                                                       │
+│  ┌──────────────────────┐   ┌──────────────────────┐  │
+│  │  Phase 1: 数据采集     │   │  Phase 2: PDF解析     │  │
+│  │  Agent 1              │   │  Agent 2              │  │
+│  │                       │   │                       │  │
+│  │  输入：股票代码        │   │  输入：PDF文件路径     │  │
+│  │        持股渠道        │   │        提取清单       │  │
+│  │        采集清单        │   │                       │  │
+│  │                       │   │  ⚠️ 仅当 pdf_path     │  │
+│  │  输出：               │   │     有效时启动         │  │
+│  │  data_pack_market.md  │   │                       │  │
+│  │                       │   │  输出：               │  │
+│  │                       │   │  data_pack_report.md  │  │
+│  └──────────┬───────────┘   └──────────┬───────────┘  │
+│             │                          │               │
+└─────────────┼──────────────────────────┼───────────────┘
+              │     等待全部完成          │
+              ▼                          ▼
+┌─────────────────────────────────────────────┐
+│           Phase 3: 分析与报告                  │
+│           Agent 3                             │
+│                                               │
+│  输入：data_pack_market.md                     │
+│        data_pack_report.md（若有）              │
+│        策略知识库 + 报告模板                     │
+│                                               │
+│  输出：{公司名}_{代码}_分析报告.md               │
+│                                               │
+│  ⚠️ 不调用任何外部数据源                        │
+│  ⚠️ 内部设置 checkpoint：                      │
+│     每完成一个因子 → 将结论追加写入报告文件       │
+│     防止 Phase 3 自身 context compact            │
+└──────────┬──────────────────────────────────┘
+           │
+           ▼
+┌─────────────────────────────────────────────┐
+│           协调器交付                           │
+│  1. 确认报告文件已生成                          │
+│  2. 返回报告文件链接给用户                       │
+└─────────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2 id="sub-agent">Sub-agent 调用指令</h2>
+<blockquote>
+<p><strong>⚠️ 前置步骤</strong>：协调器在启动任何 Sub-agent 前，必须先执行：
+<code>mkdir -p {workspace}/{symbol}/</code>
+确保输出目录已创建。所有 Sub-agent 的输出路径均指向 <code>{workspace}/{symbol}/</code>，<strong>严禁写入策略规则目录</strong>。</p>
+</blockquote>
+<h3 id="step-0pdf-phase-2">Step 0：PDF 年报确保（协调器在启动 Phase 2 前必须执行）</h3>
+<p>协调器在启动 Phase 2 前，应确保传入的 PDF 年报为<strong>当前可获取的最新完整财年年报</strong>。</p>
+<pre><code># 0-1. 确定目标年份
+current_month = {当前月份}
+if current_month &lt;= 3:
+    target_year = {当前年份} - 2   # 1-3月最新年报可能未发布，取上上年
+else:
+    target_year = {当前年份} - 1   # 4月及以后，取上一年
+
+# 0-2. 检查用户上传的 PDF
+uploaded_pdf = 检查 /sessions/*/mnt/uploads/ 目录中的 .pdf 文件
+
+if uploaded_pdf 存在:
+    # 校验文件名/标题中是否包含 target_year
+    if uploaded_pdf 文件名含 target_year 或相近年份:
+        pdf_path = uploaded_pdf   # 使用用户上传的 PDF
+    else:
+        # 用户上传的 PDF 并非最新年报，仍尝试自动下载最新的
+        → 执行 Step 0-3 自动下载
+        if 下载成功:
+            pdf_path = 下载的PDF路径
+        else:
+            pdf_path = uploaded_pdf  # 回退使用用户上传的版本
+else:
+    # 用户未上传 PDF → 自动下载
+    → 执行 Step 0-3 自动下载
+    if 下载成功:
+        pdf_path = 下载的PDF路径
+    else:
+        pdf_path = null  # 下载失败，Phase 2 将跳过（降级执行）
+
+# 0-3. 自动下载（通过 snowball-report-downloader 插件）
+Skill(&quot;snowball-report-downloader:report-download&quot;)
+# 使用插件下载最新完整财年年报：
+#   stock_code = {stock_code}
+#   report_type = &quot;年报&quot;
+#   year = target_year
+#   save_dir = {workspace}/{symbol}/
+#
+# 下载脚本路径：${PLUGIN_PATH}/skills/report-download/scripts/download_report.py
+# 参数：--url &lt;PDF_URL&gt; --stock-code &lt;code&gt; --report-type &quot;年报&quot; --year &lt;year&gt; --save-dir &lt;dir&gt;
+#
+# 若下载失败，记录失败原因，后续 Phase 2 跳过，Phase 3 使用降级方案
+</code></pre>
+<h3 id="pdf_path-phase-1-phase-2">当 pdf_path 有效时（并行启动 Phase 1 + Phase 2）</h3>
+<pre><code># 前置：创建输出目录
+Bash(&quot;mkdir -p {workspace}/{symbol}/&quot;)
+
+# Phase 1 和 Phase 2 并行
+Task(
+  subagent_type = &quot;general-purpose&quot;,
+  prompt = &quot;&quot;&quot;
+  请阅读 {strategy_dir}/phase1_数据采集.md 中的完整指令。
+  目标股票：{stock_code}
+  持股渠道：{channel}
+  将采集结果写入：{workspace}/{symbol}/data_pack_market.md
+  ⚠️ Phase 1 无需执行年报PDF下载步骤（已由协调器完成）。
+  ⚠️ 严禁向 {strategy_dir}/ 写入任何文件。
+  &quot;&quot;&quot;,
+  description = &quot;Phase1 数据采集&quot;
+)
+
+Task(
+  subagent_type = &quot;general-purpose&quot;,
+  prompt = &quot;&quot;&quot;
+  请阅读 {strategy_dir}/phase2_PDF解析.md 中的完整指令。
+  PDF文件路径：{pdf_path}
+  公司名称：{company_name}
+  将解析结果写入：{workspace}/{symbol}/data_pack_report.md
+  ⚠️ 严禁向 {strategy_dir}/ 写入任何文件。
+  &quot;&quot;&quot;,
+  description = &quot;Phase2 PDF解析&quot;
+)
+
+# 等待两个都完成后，启动 Phase 3
+Task(
+  subagent_type = &quot;general-purpose&quot;,
+  prompt = &quot;&quot;&quot;
+  请阅读 {strategy_dir}/phase3_分析与报告.md 中的完整指令。
+  数据包文件：
+    - {workspace}/{symbol}/data_pack_market.md
+    - {workspace}/{symbol}/data_pack_report.md （若存在）
+  将分析报告写入：{workspace}/{symbol}/{company}_{code}_分析报告.md
+  ⚠️ 严禁向 {strategy_dir}/ 写入任何文件。
+  &quot;&quot;&quot;,
+  description = &quot;Phase3 分析报告&quot;
+)
+</code></pre>
+<h3 id="pdf_path-null">当 pdf_path 为 null 时（自动下载失败且无用户上传，降级执行）</h3>
+<pre><code># 前置：创建输出目录
+Bash(&quot;mkdir -p {workspace}/{symbol}/&quot;)
+
+# 仅 Phase 1（跳过 Phase 2）
+Task(
+  subagent_type = &quot;general-purpose&quot;,
+  prompt = &quot;&quot;&quot;
+  请阅读 {strategy_dir}/phase1_数据采集.md 中的完整指令。
+  目标股票：{stock_code}
+  持股渠道：{channel}
+  将采集结果写入：{workspace}/{symbol}/data_pack_market.md
+  ⚠️ Phase 1 无需执行年报PDF下载步骤（协调器已尝试下载但失败）。
+  ⚠️ 严禁向 {strategy_dir}/ 写入任何文件。
+  &quot;&quot;&quot;,
+  description = &quot;Phase1 数据采集&quot;
+)
+
+# Phase 1 完成后直接启动 Phase 3（无 data_pack_report.md）
+Task(
+  subagent_type = &quot;general-purpose&quot;,
+  prompt = &quot;&quot;&quot;
+  请阅读 {strategy_dir}/phase3_分析与报告.md 中的完整指令。
+  数据包文件：
+    - {workspace}/{symbol}/data_pack_market.md
+  注意：本次分析无年报PDF（协调器自动下载失败，用户亦未上传）。
+  仅有 data_pack_market.md。
+  模块九母公司单体报表数据将不可用，使用降级方案。
+  MD&amp;A分析基于WebSearch获取的摘要信息。
+  将分析报告写入：{workspace}/{symbol}/{company}_{code}_分析报告.md
+  ⚠️ 严禁向 {strategy_dir}/ 写入任何文件。
+  &quot;&quot;&quot;,
+  description = &quot;Phase3 分析报告&quot;
+)
+</code></pre>
+<hr />
+<h2 id="_3">单位统一规则 ⭐</h2>
+<p><strong>全局单位约定</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>数据源</th>
+<th>原始单位</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data_pack_market.md（Phase 1 输出）</td>
+<td><strong>{报表币种}百万元</strong>（如 RMB百万、HKD百万）</td>
+<td>yfinance 原始输出单位，币种取决于报表币种</td>
+</tr>
+<tr>
+<td>data_pack_report.md（Phase 2 输出）</td>
+<td><strong>{报表原始单位}</strong>（常见：千元 RMB'000、百万元、万元）</td>
+<td>年报原始披露单位，以文件头标注为准</td>
+</tr>
+<tr>
+<td>Phase 3 分析报告（最终输出）</td>
+<td><strong>人民币亿元</strong></td>
+<td>报告展示单位，便于阅读</td>
+</tr>
+</tbody>
+</table>
+<p><strong>换算规则</strong>（Phase 3 agent 必须先读取各 data_pack 文件头的单位标注，再选用对应公式）：
+- 百万元 → 亿元：<strong>÷ 100</strong>（例：9,890.67百万 = 98.91亿）
+- 千元 → 亿元：<strong>÷ 100,000</strong>（例：9,082,254千元 = 90.82亿）
+- 万元 → 亿元：<strong>÷ 10,000</strong>（例：908,225万 = 90.82亿）
+- 百万元 → 千元：<strong>× 1,000</strong>（跨数据源比对时使用）
+- 非人民币币种 → 人民币：<strong>× 分析日即期汇率</strong>（Phase 1 基础信息中标注汇率）</p>
+<p><strong>⚠️ 禁止事项</strong>：
+- 禁止将百万元数值直接当作亿元使用（会产生10倍误差）
+- 禁止混用不同单位的数值直接运算
+- 禁止假设 Phase 2 输出单位固定为千元——必须读取文件头标注
+- Phase 1/Phase 2 输出必须在文件头部标注币种和单位</p>
+<hr />
+<h2 id="_4">报表时效性规则</h2>
+<p>协调器在启动 Phase 2 前，<strong>必须</strong>确保传入的 PDF 年报为<strong>当前可获取的最新完整财年年报</strong>。</p>
+<p><strong>目标年份判断</strong>：
+- 若当前日期在 1–3月：<code>target_year = 当前年份 - 2</code>（最新年报可能尚未发布，取上上财年年报）
+- 若当前日期在 4月及以后：<code>target_year = 当前年份 - 1</code>（最新财年年报通常已发布）</p>
+<p><strong>PDF 来源优先级</strong>：
+1. <strong>用户上传的 PDF</strong>：若用户上传了 PDF 且经校验确认为 <code>target_year</code> 财年年报，直接使用
+2. <strong>自动下载</strong>：若用户未上传 PDF，或上传的 PDF 并非最新财年年报，协调器<strong>必须</strong>通过 <code>snowball-report-downloader</code> 插件自动搜索并下载 <code>target_year</code> 年度年报（详见 Sub-agent 调用指令 → Step 0）
+3. <strong>降级执行</strong>：仅当自动下载也失败时，Phase 2 才会被跳过，Phase 3 使用降级方案</p>
+<p><strong>支付率等关键指标必须基于所分析年报中的同币种数据计算</strong>（股息总额与归母净利润均取报表币种），不依赖 yfinance 的 payoutRatio 等衍生字段。</p>
+<hr />
+<h2 id="ev">EV口径与现金保护规则摘要</h2>
+<p>Phase 3 新增以下分析框架（详见 phase3_分析与报告.md）：</p>
+<ol>
+<li><strong>合同负债计入类现金</strong>：适用于先款后货/预收制业务（物业管理、白酒、订阅SaaS）。合同负债纳入"超广义现金"口径，用于安全垫和EV计算，不用于可分配现金。</li>
+<li><strong>EV口径双轨制</strong>：当广义净现金/市值 &gt; 40% 时，自动触发EV口径穿透回报率计算（R_EV、GG_EV），分母从市值切换为EV=市值−广义净现金。需同时通过"现金分配意愿检验"。</li>
+<li><strong>现金保护等级</strong>：按广义净现金/市值比例分四档（无保护&lt;20%、轻度20-40%、强40-60%、极强&gt;60%），对应安全边际折扣从30%递减至15%。</li>
+<li><strong>派息可持续年限</strong>：可自由支配现金÷年派息总额，&gt;15年为"极强现金保护"。</li>
+</ol>
+<hr />
+<h2 id="_5">异常处理</h2>
+<table>
+<thead>
+<tr>
+<th>异常情况</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 1 无法获取股价/市值</td>
+<td>终止全部流程，通知用户检查股票代码</td>
+</tr>
+<tr>
+<td>Phase 1 财报数据不足5年</td>
+<td>继续执行，在 data_pack 中标注实际覆盖年份</td>
+</tr>
+<tr>
+<td>Step 0 年报自动下载失败</td>
+<td>跳过 Phase 2，Phase 3 使用降级方案，通知用户可手动上传年报重新分析</td>
+</tr>
+<tr>
+<td>Phase 2 PDF 无法解析</td>
+<td>跳过 Phase 2，Phase 3 使用降级方案</td>
+</tr>
+<tr>
+<td>Phase 3 某因子触发否决</td>
+<td>按框架规则停止后续因子，输出否决报告</td>
+</tr>
+<tr>
+<td>Phase 3 context 接近上限</td>
+<td>通过 checkpoint 机制已将中间结果持久化到文件</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">策略目录只读规则 ⚠️</h2>
+<p><strong>策略规则目录（如 <code>龟龟投资策略_v0.15/</code>）为只读目录，严禁在其中添加、修改或删除任何文件或子文件夹。</strong></p>
+<p>所有运行时生成的文件（中间数据、最终报告等）必须输出到按标的 symbol 命名的独立目录中（见下方文件路径约定）。</p>
+<p>违反此规则会导致策略文件污染、版本混乱和文件夹冲突。</p>
+<hr />
+<h2 id="_7">文件路径约定</h2>
+<pre><code>{workspace}/
+│
+├── 龟龟投资策略_v0.15/            ← 策略规则目录（⚠️ 只读，禁止修改/添加）
+│   ├── coordinator.md
+│   ├── phase1_数据采集.md
+│   ├── phase2_PDF解析.md
+│   └── phase3_分析与报告.md
+│
+└── {symbol}/                      ← 按标的 symbol 命名的输出目录（运行时创建）
+    ├── data_pack_market.md        ← Agent 1 输出
+    ├── data_pack_report.md        ← Agent 2 输出（可选）
+    └── {公司}_{代码}_分析报告.md   ← Agent 3 输出（最终报告）
+</code></pre>
+<p><strong>路径变量说明</strong>：
+- <code>{workspace}</code>：用户的工作空间根目录（如 <code>/sessions/xxx/mnt/保利物业/</code>）
+- <code>{symbol}</code>：股票代码的纯数字部分（如 <code>06049</code>、<code>0001</code>），不含 <code>.HK</code> 后缀
+- <code>{strategy_dir}</code>：策略规则目录路径（如 <code>{workspace}/龟龟投资策略_v0.15/</code>）</p>
+<p><strong>协调器在启动 Phase 1/Phase 2 前，必须先创建输出目录</strong>：<code>mkdir -p {workspace}/{symbol}/</code></p>
+<hr />
+<p><em>龟龟投资策略 v0.15 | 多阶段 Sub-agent 架构 | Coordinator</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
